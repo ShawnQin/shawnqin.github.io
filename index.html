@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -84,7 +91,7 @@
 <meta name="description" content="生命不息，折腾不止">
 <meta property="og:type" content="website">
 <meta property="og:title" content="shan">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://shawnqin.github.io/index.html">
 <meta property="og:site_name" content="shan">
 <meta property="og:description" content="生命不息，折腾不止">
 <meta property="og:locale" content="zh-Hans">
@@ -120,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="https://shawnqin.github.io/">
 
 
 
@@ -254,159 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/2017-06-29-LaTex-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shanshan Qin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shan">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/29/2017-06-29-LaTex-Note/" itemprop="url">LaTex Note</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T00:00:00+08:00">
-                2017-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="some-useful-resource"><a href="#some-useful-resource" class="headerlink" title="some useful resource"></a>some useful resource</h2><ul>
-<li>Word count. <a href="http://app.uio.no/ifi/texcount/download.html" target="_blank" rel="noopener">TexCount</a> is a project enable count of words in LaTex file. Simply downlaod and run the perl script <code>texcount -[option] file</code></li>
-<li><a href="https://mp.weixin.qq.com/s/yCfBWx37D_lVogHO2RBOfw" target="_blank" rel="noopener">排版格式</a></li>
-</ul>
-<h2 id="manage-bib-file"><a href="#manage-bib-file" class="headerlink" title="manage .bib file"></a>manage <code>.bib</code> file</h2><ul>
-<li><p>Bibliography management with <a href="https://www.sharelatex.com/learn/Bibliography_management_with_bibtex" target="_blank" rel="noopener">bibtex</a></p>
-</li>
-<li><p><a href="https://www.sharelatex.com/learn/Bibliography_management_in_LaTeX" target="_blank" rel="noopener">Bibliography management in LaTex</a></p>
-</li>
-<li><p><a href="https://www.sharelatex.com/learn/Bibliography_management_with_natbib" target="_blank" rel="noopener">natbib</a></p>
-</li>
-<li><p>Using bibdesk to manage <code>bibtex</code>. I found it very convinent to use <code>bibdesk</code>, a very user-friend app under Mac OS X. When you write an article, you can import the bibtex entry of the papers you want site in a minimum bibtex style, so that you don’t need the abstract other stuffs in the <code>.bib</code> file. This really saved my life when I was preparing a Physics Review E manucript.</p>
-</li>
-</ul>
-<h2 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h2><p>Use <code>geometry</code> package to do sopholicated layout control.</p>
-<ul>
-<li>Page foot and header setup, details can be found in <a href="https://www.overleaf.com/learn/latex/Headers_and_footers" target="_blank" rel="noopener">overleaf</a></li>
-</ul>
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><ul>
-<li><strong>quotation</strong> . The simplest way to quote words or sentence is  <code></code>text’’</li>
-<li>Use <code>Eq.~(\ref{Eqn:label})</code> to cite equation</li>
-<li>Use <code>split</code> to split long equation inside<code>equation</code> environment, which only label once</li>
-<li>For <code>array</code></li>
-</ul>
-<p>##bibliograph and citation<br>The default biblatex citation stytle is <code>natbib</code>, here is the <a href="https://cn.sharelatex.com/learn/Natbib_citation_styles#!#Further_reading" target="_blank" rel="noopener">usage</a>. The simplest example is<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%Import the natbib package and sets a bibliography  and citation styles</span><br><span class="line">\usepackage&#123;natbib&#125;</span><br><span class="line">\bibliographystyle&#123;abbrvnat&#125;</span><br><span class="line">\setcitestyle&#123;authoryear,open=&#123;((&#125;,close=&#123;))&#125;&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">%Imports the bibliography file &quot;sample.bib&quot;</span><br><span class="line">\bibliography&#123;sample&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<p>For a full list of stytle, see <a href="http://merkel.texture.rocks/Latex/natbib.php" target="_blank" rel="noopener">here</a></p>
-<p>The ohter management system is the package <code>biblatex</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[backend = biber,style=nature]&#123;biblatex&#125;</span><br><span class="line">\addbibresource&#123;library.bib&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">\printbibliography</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Beamer"><a href="#Beamer" class="headerlink" title="Beamer"></a>Beamer</h2><h3 id="Style-and-layout"><a href="#Style-and-layout" class="headerlink" title="Style and layout"></a>Style and layout</h3><ul>
-<li><a href="https://tex.stackexchange.com/questions/188778/weird-behavior-of-math-mode-in-beamer" target="_blank" rel="noopener">suggestion of beamer presentation</a></li>
-<li><a href="https://people.eecs.berkeley.edu/~jrs/speaking.html" target="_blank" rel="noopener">genearl tips for academic presentation</a></li>
-</ul>
-<h2 id="Solve-the-math-bold-problem-in-other-latex-template"><a href="#Solve-the-math-bold-problem-in-other-latex-template" class="headerlink" title="Solve the math bold problem in other latex template"></a>Solve the math bold problem in other latex template</h2><p><a href="https://tex.stackexchange.com/questions/431013/error-extended-mathchar-used-as-mathchar-when-using-bm" target="_blank" rel="noopener">using unicode-math</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;unicode-math&#125;</span><br><span class="line"></span><br><span class="line">\setmainfont&#123;XITS&#125;</span><br><span class="line">\setmathfont&#123;XITS Math&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line"></span><br><span class="line">This is a simple math example with a variable $k$.</span><br><span class="line">This works $\`&#123;k&#125;$.</span><br><span class="line">What I actually need is this: $\mathbfcal&#123;X&#125;$ and $\symbf&#123;\Theta&#125;$.</span><br><span class="line">Compare with $\mathcal&#123;X&#125;$ and $\Theta$.</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/26/2016-12-26-Resource/">
+    <link itemprop="mainEntityOfPage" href="https://shawnqin.github.io/2016/12/26/2016-12-26-Resource/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shanshan Qin">
@@ -458,6 +313,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  205
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -543,6 +429,197 @@
     
     
 
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shawnqin.github.io/2017/06/29/2017-06-29-LaTex-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shanshan Qin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/2017-06-29-LaTex-Note/" itemprop="url">LaTex Note</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T00:00:00+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  359
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="some-useful-resource"><a href="#some-useful-resource" class="headerlink" title="some useful resource"></a>some useful resource</h2><ul>
+<li>Word count. <a href="http://app.uio.no/ifi/texcount/download.html" target="_blank" rel="noopener">TexCount</a> is a project enable count of words in LaTex file. Simply downlaod and run the perl script <code>texcount -[option] file</code></li>
+<li><a href="https://mp.weixin.qq.com/s/yCfBWx37D_lVogHO2RBOfw" target="_blank" rel="noopener">排版格式</a></li>
+</ul>
+<h2 id="manage-bib-file"><a href="#manage-bib-file" class="headerlink" title="manage .bib file"></a>manage <code>.bib</code> file</h2><ul>
+<li><p>Bibliography management with <a href="https://www.sharelatex.com/learn/Bibliography_management_with_bibtex" target="_blank" rel="noopener">bibtex</a></p>
+</li>
+<li><p><a href="https://www.sharelatex.com/learn/Bibliography_management_in_LaTeX" target="_blank" rel="noopener">Bibliography management in LaTex</a></p>
+</li>
+<li><p><a href="https://www.sharelatex.com/learn/Bibliography_management_with_natbib" target="_blank" rel="noopener">natbib</a></p>
+</li>
+<li><p>Using bibdesk to manage <code>bibtex</code>. I found it very convinent to use <code>bibdesk</code>, a very user-friend app under Mac OS X. When you write an article, you can import the bibtex entry of the papers you want site in a minimum bibtex style, so that you don’t need the abstract other stuffs in the <code>.bib</code> file. This really saved my life when I was preparing a Physics Review E manucript.</p>
+</li>
+</ul>
+<h2 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h2><p>Use <code>geometry</code> package to do sopholicated layout control.</p>
+<ul>
+<li>Page foot and header setup, details can be found in <a href="https://www.overleaf.com/learn/latex/Headers_and_footers" target="_blank" rel="noopener">overleaf</a></li>
+</ul>
+<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><ul>
+<li><strong>quotation</strong> . The simplest way to quote words or sentence is  <code></code>text’’</li>
+<li>Use <code>Eq.~(\ref{Eqn:label})</code> to cite equation</li>
+<li>Use <code>split</code> to split long equation inside<code>equation</code> environment, which only label once</li>
+<li>For <code>array</code></li>
+</ul>
+<p>##bibliograph and citation<br>The default biblatex citation stytle is <code>natbib</code>, here is the <a href="https://cn.sharelatex.com/learn/Natbib_citation_styles#!#Further_reading" target="_blank" rel="noopener">usage</a>. The simplest example is<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%Import the natbib package and sets a bibliography  and citation styles</span><br><span class="line">\usepackage&#123;natbib&#125;</span><br><span class="line">\bibliographystyle&#123;abbrvnat&#125;</span><br><span class="line">\setcitestyle&#123;authoryear,open=&#123;((&#125;,close=&#123;))&#125;&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">%Imports the bibliography file &quot;sample.bib&quot;</span><br><span class="line">\bibliography&#123;sample&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>For a full list of stytle, see <a href="http://merkel.texture.rocks/Latex/natbib.php" target="_blank" rel="noopener">here</a></p>
+<p>The ohter management system is the package <code>biblatex</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[backend = biber,style=nature]&#123;biblatex&#125;</span><br><span class="line">\addbibresource&#123;library.bib&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">\printbibliography</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Beamer"><a href="#Beamer" class="headerlink" title="Beamer"></a>Beamer</h2><h3 id="Style-and-layout"><a href="#Style-and-layout" class="headerlink" title="Style and layout"></a>Style and layout</h3><ul>
+<li><a href="https://tex.stackexchange.com/questions/188778/weird-behavior-of-math-mode-in-beamer" target="_blank" rel="noopener">suggestion of beamer presentation</a></li>
+<li><a href="https://people.eecs.berkeley.edu/~jrs/speaking.html" target="_blank" rel="noopener">genearl tips for academic presentation</a></li>
+</ul>
+<h2 id="Solve-the-math-bold-problem-in-other-latex-template"><a href="#Solve-the-math-bold-problem-in-other-latex-template" class="headerlink" title="Solve the math bold problem in other latex template"></a>Solve the math bold problem in other latex template</h2><p><a href="https://tex.stackexchange.com/questions/431013/error-extended-mathchar-used-as-mathchar-when-using-bm" target="_blank" rel="noopener">using unicode-math</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\documentclass&#123;article&#125;</span><br><span class="line">\usepackage&#123;unicode-math&#125;</span><br><span class="line"></span><br><span class="line">\setmainfont&#123;XITS&#125;</span><br><span class="line">\setmathfont&#123;XITS Math&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line"></span><br><span class="line">This is a simple math example with a variable $k$.</span><br><span class="line">This works $\`&#123;k&#125;$.</span><br><span class="line">What I actually need is this: $\mathbfcal&#123;X&#125;$ and $\symbf&#123;\Theta&#125;$.</span><br><span class="line">Compare with $\mathcal&#123;X&#125;$ and $\Theta$.</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    
     
 
     
@@ -713,6 +790,15 @@
 </span>
 </div>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">564</span>
   
 </div>
 
