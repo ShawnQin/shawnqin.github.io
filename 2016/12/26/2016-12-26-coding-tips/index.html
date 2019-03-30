@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="coding,matlab,python,R,graphics,">
+  <meta name="keywords" content="programming, matlab, R, python">
 
 
 
@@ -126,18 +126,18 @@
 
 
 
-<meta name="description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
-<meta name="keywords" content="coding,matlab,python,R,graphics">
+<meta name="description" content="This post summarize all the programming &quot;tricks&quot; I encountered during my PhD study">
+<meta name="keywords" content="programming, matlab, R, python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coding tips">
 <meta property="og:url" content="https://shawnqin.github.io/2016/12/26/2016-12-26-coding-tips/index.html">
 <meta property="og:site_name" content="shan">
-<meta property="og:description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
+<meta property="og:description" content="This post summarize all the programming &quot;tricks&quot; I encountered during my PhD study">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T01:54:15.087Z">
+<meta property="og:updated_time" content="2019-03-30T03:27:29.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coding tips">
-<meta name="twitter:description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
+<meta name="twitter:description" content="This post summarize all the programming &quot;tricks&quot; I encountered during my PhD study">
 
 
 
@@ -459,6 +459,10 @@
           
 
           
+              <div class="post-description">
+                  This post summarize all the programming "tricks" I encountered during my PhD study
+              </div>
+          
 
         </div>
       </header>
@@ -522,12 +526,12 @@
 <li><strong>Print vector eps</strong>. Some times the output of <code>print -depsc</code> does not give the right vector graphics, try adding<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Sets RendererMode to 'manual' automatically</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">'Renderer'</span>, <span class="string">'Painters'</span>); </span><br><span class="line"><span class="comment">% or using the following</span></span><br><span class="line">print(gcf,<span class="string">'-depsc'</span>,<span class="string">'-painters'</span>,<span class="string">'myEps'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="Advanced-settings-on-MATLAB-default-graphic-properties"><a href="#Advanced-settings-on-MATLAB-default-graphic-properties" class="headerlink" title="Advanced settings on MATLAB default graphic properties"></a>Advanced settings on MATLAB default graphic properties</h3><ul>
+<h2 id="MATLAB-graphics"><a href="#MATLAB-graphics" class="headerlink" title="MATLAB graphics"></a>MATLAB graphics</h2><h3 id="Advanced-settings-on-MATLAB-default-graphic-properties"><a href="#Advanced-settings-on-MATLAB-default-graphic-properties" class="headerlink" title="Advanced settings on MATLAB default graphic properties"></a>Advanced settings on MATLAB default graphic properties</h3><ul>
 <li><a href="http://steventhornton.ca/default-plot-settings-in-matlab/" target="_blank" rel="noopener">Default Plot Settings in Matlab</a> This is an excellent post on this topic.</li>
 </ul>
-<h2 id="gram-package"><a href="#gram-package" class="headerlink" title="gram package"></a>gram package</h2><p>here is the <a href="https://cn.mathworks.com/matlabcentral/fileexchange/54465-gramm--complete-data-visualization-toolbox--ggplot2-r-like-" target="_blank" rel="noopener">gram</a> package, which mimic the famous <code>ggplot2</code> pacakge in R, generating publish-quality graphics</p>
-<h2 id="Chebfun-package"><a href="#Chebfun-package" class="headerlink" title="Chebfun package"></a>Chebfun package</h2><p>A very useful numerical tool box for computing almost any function. see <a href="http://www.chebfun.org/" target="_blank" rel="noopener">here</a> for more detail. They also published a book of ODEs with many MATLAB analysis, can be freely downloaded <a href="http://people.maths.ox.ac.uk/trefethen/ExploringODEs10Nov2017.pdf" target="_blank" rel="noopener">here</a>. An online <a href="http://www.chebfun.org/docs/guide/" target="_blank" rel="noopener">tutorial</a> is also provided</p>
-<h2 id="Some-tips"><a href="#Some-tips" class="headerlink" title="Some tips"></a>Some tips</h2><ul>
+<h3 id="gram-package"><a href="#gram-package" class="headerlink" title="gram package"></a>gram package</h3><p>here is the <a href="https://cn.mathworks.com/matlabcentral/fileexchange/54465-gramm--complete-data-visualization-toolbox--ggplot2-r-like-" target="_blank" rel="noopener">gram</a> package, which mimic the famous <code>ggplot2</code> pacakge in R, generating publish-quality graphics</p>
+<h3 id="Chebfun-package"><a href="#Chebfun-package" class="headerlink" title="Chebfun package"></a>Chebfun package</h3><p>A very useful numerical tool box for computing almost any function. see <a href="http://www.chebfun.org/" target="_blank" rel="noopener">here</a> for more detail. They also published a book of ODEs with many MATLAB analysis, can be freely downloaded <a href="http://people.maths.ox.ac.uk/trefethen/ExploringODEs10Nov2017.pdf" target="_blank" rel="noopener">here</a>. An online <a href="http://www.chebfun.org/docs/guide/" target="_blank" rel="noopener">tutorial</a> is also provided</p>
+<h2 id="Some-tips-in-writing-matlab-scripts"><a href="#Some-tips-in-writing-matlab-scripts" class="headerlink" title="Some tips in writing matlab scripts"></a>Some tips in writing matlab scripts</h2><ul>
 <li><strong>Block comments</strong>. You can you <code>%{</code> and <code>%}</code> pair to comment a block of code</li>
 <li><strong>Causion of global variables</strong>. To make sure you delete the global variables after finish using them</li>
 <li><p><strong>Passing extral parameter to complex function</strong>. Some times a complex function use another function as arguement, which itself contain other parameters</p>
@@ -537,6 +541,9 @@
 </li>
 <li><strong>Passing extral parameter to the function</strong><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% define the function with extral parameter parsing</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span> = <span class="title">findArea</span><span class="params">(width,varargin)</span></span></span><br><span class="line">   defaultHeight = <span class="number">1</span>;</span><br><span class="line">   defaultUnits = <span class="string">'inches'</span>;</span><br><span class="line">   defaultShape = <span class="string">'rectangle'</span>;</span><br><span class="line">   </span><br><span class="line">   expectedShapes = &#123;<span class="string">'square'</span>,<span class="string">'rectangle'</span>,<span class="string">'parallelogram'</span>&#125;;</span><br><span class="line"></span><br><span class="line">   p = inputParser;</span><br><span class="line">   validScalarPosNum = @(x) isnumeric(x) &amp;&amp; <span class="built_in">isscalar</span>(x) &amp;&amp; (x &gt; <span class="number">0</span>);</span><br><span class="line">   addRequired(p,<span class="string">'width'</span>,validScalarPosNum);</span><br><span class="line">   addParameter(p,<span class="string">'height'</span>,defaultHeight,validScalarPosNum);</span><br><span class="line">   addParameter(p,<span class="string">'units'</span>,defaultUnits,@isstring);</span><br><span class="line">   addParameter(p,<span class="string">'shape'</span>,defaultShape,...</span><br><span class="line">                 @(x) any(validatestring(x,expectedShapes)));</span><br><span class="line">   addOptional(p,<span class="string">'test'</span>,<span class="number">1</span>,@isnumeric)</span><br><span class="line">   parse(p,width,varargin&#123;:&#125;);</span><br><span class="line">   </span><br><span class="line">   a = p.Results.width*p.Results.height; </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% now you can call the function in servearl ways</span></span><br><span class="line">a = findArea(<span class="number">7</span>);</span><br><span class="line">a = findArea(<span class="number">7</span>,<span class="number">3</span>);</span><br><span class="line">a = findArea(<span class="number">13</span>,<span class="string">'shape'</span>,<span class="string">'square'</span>);</span><br><span class="line">a = findArea(<span class="number">13</span>,<span class="string">'units'</span>,<span class="string">"miles"</span>,<span class="string">'shape'</span>,<span class="string">'square'</span>);</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="Dealing-with-dependency"><a href="#Dealing-with-dependency" class="headerlink" title="Dealing with dependency"></a>Dealing with dependency</h2><ul>
+<li><a href="https://cn.mathworks.com/help/matlab/matlab_prog/identify-dependencies.html" target="_blank" rel="noopener">确定程序依赖项</a>. 使用 <code>matlab.codetools.requiredFilesAndProducts(&#39;myFun.m&#39;)</code> 可以详细列出<code>myFun.m</code> 所依赖的其他文件。</li>
 </ul>
 <h3 id="Generating-correlation-matrix"><a href="#Generating-correlation-matrix" class="headerlink" title="Generating correlation matrix"></a>Generating correlation matrix</h3><ul>
 <li>Some methods used to generate random or structured random correlation matrix see <a href="https://stats.stackexchange.com/questions/2746/how-to-efficiently-generate-random-positive-semidefinite-correlation-matrices" target="_blank" rel="noopener">here</a></li>
@@ -552,7 +559,7 @@
 <li>Explicit multiprocessing: Multiple instances of MATLAB run on several processors, often with shared memory, and execute a single MATLAB command or M-function concurrently. Supported by dedicated PCT programming constructs </li>
 <li>Distributed computing: Multiple instances of MATLAB run multiple independent computations on separate computers, each with its own memory, typically in a cluster, grid or cloud.</li>
 </ul>
-<p>####The Parallel Computing Toolbox</p>
+<p>###The Parallel Computing Toolbox</p>
 <ul>
 <li>Using more workers than available cores generally decreases performance due to increased task-switching and communication overheads </li>
 <li>the iteration values of a parfor statement must be increasing consecutive integers </li>
@@ -561,9 +568,6 @@
 <ul>
 <li>PCT only allows us to access computing resources (CPU cores or GPUs) on the same machine (node). It does not enable work parallelization across separate com- puting nodes (cluster, grid, or cloud) </li>
 <li>To run task across multiple nodes need some configuration of the MATLAB, see <a href="https://confluence.csiro.au/display/SC/Parallel+Computing+with+Matlab+on+a+Linux+cluster#ParallelComputingwithMatlabonaLinuxcluster-UsingtheParallelComputingToolbox" target="_blank" rel="noopener">here</a> for example. I also tried to test this in a folder <code>/Users/shan/Documents/MATLAB/paralTest</code> and <code>/home/tangc_pkuhpc/lustre1/ssqin/olfactoryCoding/optiInterMatrix/paralTest</code>. See also chapter 6 of the book  <code>acceleration MATLAB performance</code></li>
-</ul>
-<h2 id="Dealing-with-dependency"><a href="#Dealing-with-dependency" class="headerlink" title="Dealing with dependency"></a>Dealing with dependency</h2><ul>
-<li><a href="https://cn.mathworks.com/help/matlab/matlab_prog/identify-dependencies.html" target="_blank" rel="noopener">确定程序依赖项</a>. 使用 <code>matlab.codetools.requiredFilesAndProducts(&#39;myFun.m&#39;)</code> 可以详细列出<code>myFun.m</code> 所依赖的其他文件。</li>
 </ul>
 <h2 id="Random-number-generation​"><a href="#Random-number-generation​" class="headerlink" title="Random number generation​"></a>Random number generation​</h2><ul>
 <li><a href="http://www.inferencelab.com/rejection-sampling-matlab-demo/" target="_blank" rel="noopener">Rejection sampling</a>, simple yet inefficient</li>
@@ -576,22 +580,21 @@
 <li><strong>Uisng the <code>startup.m</code> file</strong>. Creat the file under the path <code>/Applications/MATLAB_R2016b.app/toolbox/local&#39; or</code>/opt/MATLAB2017a/toolbox/local’<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% set the default folder when matlab start</span></span><br><span class="line">cd /full/path/of/folder/you/want</span><br><span class="line"></span><br><span class="line"><span class="comment">% add path</span></span><br><span class="line">addpath folername</span><br><span class="line"></span><br><span class="line"><span class="comment">%also add subfolders</span></span><br><span class="line">addpath(genpath(<span class="string">'foldername'</span>))</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>#Mathematica install</p>
-<ul>
+<h2 id="Mathematica-install"><a href="#Mathematica-install" class="headerlink" title="Mathematica install"></a>Mathematica install</h2><ul>
 <li><a href="https://tiebamma.github.io/InstallTutorial/" target="_blank" rel="noopener">破解版</a>. 还有<a href="https://tiebamma.github.io/InstallTutorial/" target="_blank" rel="noopener">这个</a></li>
 </ul>
-<h1 id="C-language"><a href="#C-language" class="headerlink" title="C language"></a>C language</h1><h2 id="some-tutorial"><a href="#some-tutorial" class="headerlink" title="some tutorial"></a>some tutorial</h2><ul>
+<h2 id="C-language"><a href="#C-language" class="headerlink" title="C language"></a>C language</h2><h3 id="some-tutorial"><a href="#some-tutorial" class="headerlink" title="some tutorial"></a>some tutorial</h3><ul>
 <li>[online learning ]<a href="https://www.cprogramming.com/tutorial/c-tutorial.html" target="_blank" rel="noopener">https://www.cprogramming.com/tutorial/c-tutorial.html</a></li>
 </ul>
-<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><ul>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><ul>
 <li><a href="http://www.cnblogs.com/xuybin/p/3166904.html" target="_blank" rel="noopener">Valgrind</a> and also <a href="http://blog.csdn.net/caohao2008/article/details/5682291" target="_blank" rel="noopener">here</a></li>
 <li><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-memleak/index.html" target="_blank" rel="noopener">IBM general introduction</a></li>
 <li>[Xcode instrument检查内】(<a href="http://blog.csdn.net/Zsk_Zane/article/details/52016411" target="_blank" rel="noopener">http://blog.csdn.net/Zsk_Zane/article/details/52016411</a>)</li>
 </ul>
-<h1 id="Useful-packages"><a href="#Useful-packages" class="headerlink" title="Useful packages"></a>Useful packages</h1><ul>
+<h2 id="Useful-packages"><a href="#Useful-packages" class="headerlink" title="Useful packages"></a>Useful packages</h2><ul>
 <li><strong><a href="https://lvdmaaten.github.io/tsne/#implementations" target="_blank" rel="noopener">t-SNE</a></strong></li>
 </ul>
-<h1 id="CLS-集群"><a href="#CLS-集群" class="headerlink" title="CLS 集群"></a>CLS 集群</h1><h2 id="作业调度系统-SLURM"><a href="#作业调度系统-SLURM" class="headerlink" title="作业调度系统 SLURM"></a>作业调度系统 SLURM</h2><ul>
+<h2 id="CLS-集群"><a href="#CLS-集群" class="headerlink" title="CLS 集群"></a>CLS 集群</h2><h3 id="作业调度系统-SLURM"><a href="#作业调度系统-SLURM" class="headerlink" title="作业调度系统 SLURM"></a>作业调度系统 SLURM</h3><ul>
 <li><a href="https://slurm.schedmd.com/cpu_management.html" target="_blank" rel="noopener">官网介绍</a></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST</span><br><span class="line">debug*       up      30:00      1  down* c12b01n02</span><br><span class="line">debug*       up      30:00      1   idle c12b01n01</span><br><span class="line">cn-test      up 13-00:00:0      1 drain* c01b01n01</span><br><span class="line">cn-test      up 13-00:00:0      5   idle c01b01n[02-06]</span><br><span class="line">cn-large     up 5-00:00:00      7 drain* c13b04n[01,04],c15b04n[07,10],c16b02n14,c16b04n[01,05]</span><br><span class="line">cn-large     up 5-00:00:00     30  dow</span><br></pre></td></tr></table></figure>
@@ -599,17 +602,16 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adev0: squeue</span><br><span class="line">JOBID PARTITION  NAME  USER ST  TIME NODES NODELIST(REASON)</span><br><span class="line">65646     batch  chem  mike  R 24:19     2 adev[7-8]</span><br><span class="line">65647     batch   bio  joan  R  0:09     1 adev14</span><br><span class="line">65648     batch  math  phil PD  0:00     6 (Resources)</span><br></pre></td></tr></table></figure>
 <p> Typical reasons for pending jobs are <em>Resources</em> (waiting for resources to become available) and <em>Priority</em>(queued behind a higher priority job)</p>
 <p>The <code>scontrol</code>command can be used to report more detailed information about nodes, partitions, jobs, job steps, and configuration. </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>SBATCH -J mat104648</span><br><span class="line"><span class="meta">#</span>SBATCH -p cn-short</span><br><span class="line"><span class="meta">#</span>SBATCH -N 1</span><br><span class="line"><span class="meta">#</span>SBATCH -o mat104648_%j.out</span><br><span class="line"><span class="meta">#</span>SBATCH -e mat104648_%j.err</span><br><span class="line"><span class="meta">#</span>SBATCH --no-requeue</span><br><span class="line"><span class="meta">#</span>SBATCH -A tangc_g1</span><br><span class="line"><span class="meta">#</span>SBATCH --qos=tangccns</span><br><span class="line"><span class="meta">#</span>SBATCH --nodelist=c01b06n05</span><br><span class="line"><span class="meta">#</span>SBATCH -c 20</span><br><span class="line">pkurun  matlab -r SolveTargetFun</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -J mat104648</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -p cn-short</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -N 1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -o mat104648_%j.out</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -e mat104648_%j.err</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --no-requeue</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -A tangc_g1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --qos=tangccns</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --nodelist=c01b06n05</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -c 20</span></span><br><span class="line">pkurun  matlab -r SolveTargetFun</span><br></pre></td></tr></table></figure>
 <p>Specifify more nodes in script, it is hard to achieve, but we can work around by exclude some nodes</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>SBATCH -x ./nodelist</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">SBATCH -x ./nodelist</span></span><br></pre></td></tr></table></figure>
 <p>the content of node list is just those nodes with state <code>mix</code>, comma separated<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c01b01n[07-12],c01b02n02,c01b05n[05-08,11-12],c02b05n[05-06,10],c03b01n[05,08,11-12],c03b02n12,c03b03n03,c03b04n[04,08-10],c04b01n[01-02,04,10-11],c04b02n[01-03],c05b01n[01,05,07,09-10],c05b03n[10-12],c05b05n[09-10,12],c06b04n09</span><br></pre></td></tr></table></figure></p>
-<p>A example for submite<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>read the rng seed file</span><br><span class="line">seed=($(awk '&#123;print $1&#125;' rngSeed.txt))</span><br><span class="line">echo $seed</span><br><span class="line"></span><br><span class="line">fName='gcmiWhole_sum_new'</span><br><span class="line">num=(1)</span><br><span class="line">allN=(100)</span><br><span class="line"><span class="meta">#</span>allN=(100)</span><br><span class="line"> 11 allR=(30)</span><br><span class="line"> 12 #allR=(6 7 7)</span><br><span class="line"> 13 #N=100</span><br><span class="line"> 14 #R=21</span><br><span class="line"> 15</span><br><span class="line"> 16 #number of nonzero element</span><br><span class="line"> 17 Cons="'none'"</span><br><span class="line"> 18</span><br><span class="line"> 19 tp='wholeMat'</span><br><span class="line"> 20 corr='indep'</span><br><span class="line"> 21 S1=30</span><br><span class="line"> 22 R0=1</span><br><span class="line"> 23 S0=1</span><br></pre></td></tr></table></figure></p>
-<h3 id="File-transfer-in-Mac-using-FileZilla"><a href="#File-transfer-in-Mac-using-FileZilla" class="headerlink" title="File transfer in Mac using FileZilla"></a>File transfer in Mac using FileZilla</h3><p>With simple configuration, we can transfer files to cluster without repeatly type the password.</p>
-<ul>
+<p>A example for submite<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">read</span> the rng seed file</span></span><br><span class="line">seed=($(awk '&#123;print $1&#125;' rngSeed.txt))</span><br><span class="line">echo $seed</span><br><span class="line"></span><br><span class="line">fName='gcmiWhole_sum_new'</span><br><span class="line">num=(1)</span><br><span class="line">allN=(100)</span><br><span class="line"><span class="meta">#</span><span class="bash">allN=(100)</span></span><br><span class="line"> 11 allR=(30)</span><br><span class="line"> 12 #allR=(6 7 7)</span><br><span class="line"> 13 #N=100</span><br><span class="line"> 14 #R=21</span><br><span class="line"> 15</span><br><span class="line"> 16 #number of nonzero element</span><br><span class="line"> 17 Cons="'none'"</span><br><span class="line"> 18</span><br><span class="line"> 19 tp='wholeMat'</span><br><span class="line"> 20 corr='indep'</span><br><span class="line"> 21 S1=30</span><br><span class="line"> 22 R0=1</span><br><span class="line"> 23 S0=1</span><br></pre></td></tr></table></figure></p>
+<h3 id="File-transfer-in-Mac-using-FileZilla"><a href="#File-transfer-in-Mac-using-FileZilla" class="headerlink" title="File transfer in Mac using FileZilla"></a>File transfer in Mac using FileZilla</h3><p>With simple configuration, we can transfer files to cluster without repeatly type the password.<br><div class="note primary"><ul>
 <li>First, login <code>10.100.1.88</code>, and download a samll client <code>shterm-client</code> (better put it inside <code>Applications</code>).</li>
 <li>Second, select one or more hosts and double clicks, it will pop out a small window asking you whether open <code>shterm</code>, hit yes.</li>
 <li>Now you can see <code>filezilla</code> automatically popout. Succeed!</li>
-</ul>
+</ul></div></p>
 
       
     </div>
@@ -633,15 +635,15 @@
       
         <div class="post-tags">
           
+            <a href="/tags/graphics/" rel="tag"># graphics</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
             <a href="/tags/coding/" rel="tag"># coding</a>
           
             <a href="/tags/matlab/" rel="tag"># matlab</a>
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
             <a href="/tags/R/" rel="tag"># R</a>
-          
-            <a href="/tags/graphics/" rel="tag"># graphics</a>
           
         </div>
       
@@ -666,18 +668,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/26/2016-12-26-Resource/" rel="next" title="Resource">
-                <i class="fa fa-chevron-left"></i> Resource
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/29/2017-06-29-LaTex-Note/" rel="prev" title="LaTex Note">
-                LaTex Note <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/26/2016-12-26-Resource/" rel="prev" title="Resource">
+                Resource <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -755,7 +753,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -766,7 +764,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -777,7 +775,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -845,7 +843,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#saving-and-loading-MATLAB-structure"><span class="nav-number">1.</span> <span class="nav-text">saving and loading  MATLAB structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-graphics-skill"><span class="nav-number">2.</span> <span class="nav-text">Advanced graphics skill</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced-settings-on-MATLAB-default-graphic-properties"><span class="nav-number">2.1.</span> <span class="nav-text">Advanced settings on MATLAB default graphic properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gram-package"><span class="nav-number">3.</span> <span class="nav-text">gram package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chebfun-package"><span class="nav-number">4.</span> <span class="nav-text">Chebfun package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-tips"><span class="nav-number">5.</span> <span class="nav-text">Some tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-correlation-matrix"><span class="nav-number">5.1.</span> <span class="nav-text">Generating correlation matrix</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB-parallel-tool"><span class="nav-number">6.</span> <span class="nav-text">MATLAB parallel tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealing-with-dependency"><span class="nav-number">7.</span> <span class="nav-text">Dealing with dependency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-number-generation​"><span class="nav-number">8.</span> <span class="nav-text">Random number generation​</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparse-matrix"><span class="nav-number">9.</span> <span class="nav-text">Sparse matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permenantly-add-folder-and-subfolders-to-the-MATLAB-searching-path"><span class="nav-number">10.</span> <span class="nav-text">Permenantly add folder and subfolders to the MATLAB searching path</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#C-language"><span class="nav-number"></span> <span class="nav-text">C language</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#some-tutorial"><span class="nav-number">1.</span> <span class="nav-text">some tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存管理"><span class="nav-number">2.</span> <span class="nav-text">内存管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Useful-packages"><span class="nav-number"></span> <span class="nav-text">Useful packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLS-集群"><span class="nav-number"></span> <span class="nav-text">CLS 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作业调度系统-SLURM"><span class="nav-number">1.</span> <span class="nav-text">作业调度系统 SLURM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File-transfer-in-Mac-using-FileZilla"><span class="nav-number">1.1.</span> <span class="nav-text">File transfer in Mac using FileZilla</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#saving-and-loading-MATLAB-structure"><span class="nav-number">1.</span> <span class="nav-text">saving and loading  MATLAB structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-graphics-skill"><span class="nav-number">2.</span> <span class="nav-text">Advanced graphics skill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB-graphics"><span class="nav-number">3.</span> <span class="nav-text">MATLAB graphics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced-settings-on-MATLAB-default-graphic-properties"><span class="nav-number">3.1.</span> <span class="nav-text">Advanced settings on MATLAB default graphic properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gram-package"><span class="nav-number">3.2.</span> <span class="nav-text">gram package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chebfun-package"><span class="nav-number">3.3.</span> <span class="nav-text">Chebfun package</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-tips-in-writing-matlab-scripts"><span class="nav-number">4.</span> <span class="nav-text">Some tips in writing matlab scripts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealing-with-dependency"><span class="nav-number">5.</span> <span class="nav-text">Dealing with dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-correlation-matrix"><span class="nav-number">5.1.</span> <span class="nav-text">Generating correlation matrix</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB-parallel-tool"><span class="nav-number">6.</span> <span class="nav-text">MATLAB parallel tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-number-generation​"><span class="nav-number">7.</span> <span class="nav-text">Random number generation​</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparse-matrix"><span class="nav-number">8.</span> <span class="nav-text">Sparse matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permenantly-add-folder-and-subfolders-to-the-MATLAB-searching-path"><span class="nav-number">9.</span> <span class="nav-text">Permenantly add folder and subfolders to the MATLAB searching path</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathematica-install"><span class="nav-number">10.</span> <span class="nav-text">Mathematica install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-language"><span class="nav-number">11.</span> <span class="nav-text">C language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#some-tutorial"><span class="nav-number">11.1.</span> <span class="nav-text">some tutorial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理"><span class="nav-number">11.2.</span> <span class="nav-text">内存管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Useful-packages"><span class="nav-number">12.</span> <span class="nav-text">Useful packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CLS-集群"><span class="nav-number">13.</span> <span class="nav-text">CLS 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作业调度系统-SLURM"><span class="nav-number">13.1.</span> <span class="nav-text">作业调度系统 SLURM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-transfer-in-Mac-using-FileZilla"><span class="nav-number">13.2.</span> <span class="nav-text">File transfer in Mac using FileZilla</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -886,7 +884,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.7k</span>
+    <span title="Site words total count">5.5k</span>
   
 </div>
 
@@ -906,7 +904,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.7k字</span>
+  <span class="post-count">博客全站共5.5k字</span>
 </div>
 
         
