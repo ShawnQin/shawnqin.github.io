@@ -126,10 +126,10 @@
     <url>%2F2017%2F08%2F15%2F2017-08-15-GitHub%20and%20Bitbucket%2F</url>
     <content type="text"><![CDATA[work with branches 多个分支的提交与合并 Git分支管理策略 A successful Git branching model github 上的教程，使用分支 git 常用命令清单 use git diff branch_1..branch_2 to compare the difference of two branches 一个很好的教程 使用beyond compare 来解决merge 过程中的冲突, mac 下的配置. 使用方法1234git config --global diff.tool bc3git config --global difftool.bc3.trustExitCode truegit config --global merge.tool bc3git config --global mergetool.bc3.trustExitCode true Mac 下分支合并步骤 一个例子12345678910111213141516171819202122232425#查看当前分支git branch#切换到 master 分支git checkout master#比较更改git diff master develop#或者使用 可视化的工具，比如beyond compare，关于其配置见上面链接git difftool master develop# 合并分支git merge --no-ff develop# 解决冲突git mergetool conflictifle# 重新提交git commit -a#推送到远端仓库git push origin master# 删除分支git branch -d [branch-name]# 新建一个分支，并切换到该分支git checkout -b [branch]# 切换到指定分支，并更新工作区git checkout [branch-name]]]></content>
       <tags>
+        <tag>resource</tag>
         <tag>github</tag>
         <tag>code</tag>
         <tag>tips</tag>
-        <tag>resource</tag>
         <tag>bitbucket</tag>
       </tags>
   </entry>
@@ -166,8 +166,8 @@
         <category>programming</category>
       </categories>
       <tags>
-        <tag>resource</tag>
         <tag>python</tag>
+        <tag>resource</tag>
         <tag>jupyter</tag>
         <tag>anaconda</tag>
         <tag>plot</tag>
@@ -187,11 +187,11 @@
         <category>programming</category>
       </categories>
       <tags>
-        <tag>graphics</tag>
-        <tag>python</tag>
         <tag>coding</tag>
         <tag>matlab</tag>
+        <tag>python</tag>
         <tag>R</tag>
+        <tag>graphics</tag>
       </tags>
   </entry>
 </search>
