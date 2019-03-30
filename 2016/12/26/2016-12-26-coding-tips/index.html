@@ -614,11 +614,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adev0: squeue</span><br><span class="line">JOBID PARTITION  NAME  USER ST  TIME NODES NODELIST(REASON)</span><br><span class="line">65646     batch  chem  mike  R 24:19     2 adev[7-8]</span><br><span class="line">65647     batch   bio  joan  R  0:09     1 adev14</span><br><span class="line">65648     batch  math  phil PD  0:00     6 (Resources)</span><br></pre></td></tr></table></figure>
 <p> Typical reasons for pending jobs are <em>Resources</em> (waiting for resources to become available) and <em>Priority</em>(queued behind a higher priority job)</p>
 <p>The <code>scontrol</code>command can be used to report more detailed information about nodes, partitions, jobs, job steps, and configuration. </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -J mat104648</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -p cn-short</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -N 1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -o mat104648_%j.out</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -e mat104648_%j.err</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --no-requeue</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -A tangc_g1</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --qos=tangccns</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH --nodelist=c01b06n05</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SBATCH -c 20</span></span><br><span class="line">pkurun  matlab -r SolveTargetFun</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>SBATCH -J mat104648</span><br><span class="line"><span class="meta">#</span>SBATCH -p cn-short</span><br><span class="line"><span class="meta">#</span>SBATCH -N 1</span><br><span class="line"><span class="meta">#</span>SBATCH -o mat104648_%j.out</span><br><span class="line"><span class="meta">#</span>SBATCH -e mat104648_%j.err</span><br><span class="line"><span class="meta">#</span>SBATCH --no-requeue</span><br><span class="line"><span class="meta">#</span>SBATCH -A tangc_g1</span><br><span class="line"><span class="meta">#</span>SBATCH --qos=tangccns</span><br><span class="line"><span class="meta">#</span>SBATCH --nodelist=c01b06n05</span><br><span class="line"><span class="meta">#</span>SBATCH -c 20</span><br><span class="line">pkurun  matlab -r SolveTargetFun</span><br></pre></td></tr></table></figure>
 <p>Specifify more nodes in script, it is hard to achieve, but we can work around by exclude some nodes</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">SBATCH -x ./nodelist</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>SBATCH -x ./nodelist</span><br></pre></td></tr></table></figure>
 <p>the content of node list is just those nodes with state <code>mix</code>, comma separated<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c01b01n[07-12],c01b02n02,c01b05n[05-08,11-12],c02b05n[05-06,10],c03b01n[05,08,11-12],c03b02n12,c03b03n03,c03b04n[04,08-10],c04b01n[01-02,04,10-11],c04b02n[01-03],c05b01n[01,05,07,09-10],c05b03n[10-12],c05b05n[09-10,12],c06b04n09</span><br></pre></td></tr></table></figure></p>
-<p>A example for submite<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">read</span> the rng seed file</span></span><br><span class="line">seed=($(awk '&#123;print $1&#125;' rngSeed.txt))</span><br><span class="line">echo $seed</span><br><span class="line"></span><br><span class="line">fName='gcmiWhole_sum_new'</span><br><span class="line">num=(1)</span><br><span class="line">allN=(100)</span><br><span class="line"><span class="meta">#</span><span class="bash">allN=(100)</span></span><br><span class="line"> 11 allR=(30)</span><br><span class="line"> 12 #allR=(6 7 7)</span><br><span class="line"> 13 #N=100</span><br><span class="line"> 14 #R=21</span><br><span class="line"> 15</span><br><span class="line"> 16 #number of nonzero element</span><br><span class="line"> 17 Cons="'none'"</span><br><span class="line"> 18</span><br><span class="line"> 19 tp='wholeMat'</span><br><span class="line"> 20 corr='indep'</span><br><span class="line"> 21 S1=30</span><br><span class="line"> 22 R0=1</span><br><span class="line"> 23 S0=1</span><br></pre></td></tr></table></figure></p>
+<p>A example for submite<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>read the rng seed file</span><br><span class="line">seed=($(awk '&#123;print $1&#125;' rngSeed.txt))</span><br><span class="line">echo $seed</span><br><span class="line"></span><br><span class="line">fName='gcmiWhole_sum_new'</span><br><span class="line">num=(1)</span><br><span class="line">allN=(100)</span><br><span class="line"><span class="meta">#</span>allN=(100)</span><br><span class="line"> 11 allR=(30)</span><br><span class="line"> 12 #allR=(6 7 7)</span><br><span class="line"> 13 #N=100</span><br><span class="line"> 14 #R=21</span><br><span class="line"> 15</span><br><span class="line"> 16 #number of nonzero element</span><br><span class="line"> 17 Cons="'none'"</span><br><span class="line"> 18</span><br><span class="line"> 19 tp='wholeMat'</span><br><span class="line"> 20 corr='indep'</span><br><span class="line"> 21 S1=30</span><br><span class="line"> 22 R0=1</span><br><span class="line"> 23 S0=1</span><br></pre></td></tr></table></figure></p>
 <h3 id="File-transfer-in-Mac-using-FileZilla"><a href="#File-transfer-in-Mac-using-FileZilla" class="headerlink" title="File transfer in Mac using FileZilla"></a>File transfer in Mac using FileZilla</h3><p>With simple configuration, we can transfer files to cluster without repeatly type the password.<br><div class="note primary"><ul>
 <li>First, login <code>10.100.1.88</code>, and download a samll client <code>shterm-client</code> (better put it inside <code>Applications</code>).</li>
 <li>Second, select one or more hosts and double clicks, it will pop out a small window asking you whether open <code>shterm</code>, hit yes.</li>
@@ -647,8 +647,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/graphics/" rel="tag"># graphics</a>
-          
             <a href="/tags/coding/" rel="tag"># coding</a>
           
             <a href="/tags/matlab/" rel="tag"># matlab</a>
@@ -656,6 +654,8 @@
             <a href="/tags/python/" rel="tag"># python</a>
           
             <a href="/tags/R/" rel="tag"># R</a>
+          
+            <a href="/tags/graphics/" rel="tag"># graphics</a>
           
         </div>
       
@@ -690,8 +690,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/16/2017-02-16-Python/" rel="prev" title="Learning python">
-                Learning python <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/26/2017-03-20-bootstrap-sampling/" rel="prev" title="Bootstrap sampling">
+                Bootstrap sampling <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -769,7 +769,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -780,7 +780,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -791,7 +791,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -900,7 +900,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.5k</span>
+    <span title="Site words total count">7.7k</span>
   
 </div>
 
@@ -920,7 +920,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.5k字</span>
+  <span class="post-count">博客全站共7.7k字</span>
 </div>
 
         

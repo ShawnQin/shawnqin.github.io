@@ -64,18 +64,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[秦小厨的私房菜]]></title>
-    <url>%2F2018%2F01%2F05%2F2018-02-04-%E7%A7%A6%E5%B0%8F%E5%8E%A8%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C%2F</url>
-    <content type="text"><![CDATA[这个blog中我将自己平常喜欢吃的菜或者喜欢做的菜菜谱分享出出来，由于我自己对于烹饪有很大的兴趣，但它更像一门“实验学科”需要不断地尝试。 秦小厨的私房菜菜谱蜜汁排骨 新鲜猪排（一斤左右）切小块，放入热水锅中，待血色消失，捞出沥干水分备用 热锅放入适量油，待油温足够热时加入冰糖，快速翻滚，此时火不易太大，否则容易糊。待冰糖融化，颜色开始变为焦黄时，加入刚才焯过水的猪排，快速翻炒，直至排骨表面变为黄色（此为着色）。 加入八角，香叶少许，姜切块（可以大块儿），蒜瓣（不用切），小葱（整根放入，可以打成结）。加入热水适量（这个比较难把握，需要试几次），盖上锅盖，大火煮15-20分钟 灰萝卜切滚刀块（不宜太小），放入锅中，小火闷25-30分钟。在这个过程中，要注意水是否烧干，容易糊。 待胡萝卜熟后，打开锅盖，大火收汁（5-10分钟左右）即可，可以翻动，确保不会黏在锅底。]]></content>
-      <categories>
-        <category>hobby</category>
-      </categories>
-      <tags>
-        <tag>私房菜</tag>
-        <tag>菜谱</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Submit a manuscript]]></title>
     <url>%2F2018%2F01%2F05%2F2018-01-05-Submit-a-manuscript%2F</url>
     <content type="text"><![CDATA[How to write a good cover letterThere are many tips: from springer phdcomics. A websits posts very interesting things about PhD or graduate school.]]></content>
@@ -91,6 +79,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[秦小厨的私房菜]]></title>
+    <url>%2F2018%2F01%2F05%2F2018-02-04-%E7%A7%A6%E5%B0%8F%E5%8E%A8%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C%2F</url>
+    <content type="text"><![CDATA[这个blog中我将自己平常喜欢吃的菜或者喜欢做的菜菜谱分享出出来，由于我自己对于烹饪有很大的兴趣，但它更像一门“实验学科”需要不断地尝试。 秦小厨的私房菜菜谱蜜汁排骨 新鲜猪排（一斤左右）切小块，放入热水锅中，待血色消失，捞出沥干水分备用 热锅放入适量油，待油温足够热时加入冰糖，快速翻滚，此时火不易太大，否则容易糊。待冰糖融化，颜色开始变为焦黄时，加入刚才焯过水的猪排，快速翻炒，直至排骨表面变为黄色（此为着色）。 加入八角，香叶少许，姜切块（可以大块儿），蒜瓣（不用切），小葱（整根放入，可以打成结）。加入热水适量（这个比较难把握，需要试几次），盖上锅盖，大火煮15-20分钟 灰萝卜切滚刀块（不宜太小），放入锅中，小火闷25-30分钟。在这个过程中，要注意水是否烧干，容易糊。 待胡萝卜熟后，打开锅盖，大火收汁（5-10分钟左右）即可，可以翻动，确保不会黏在锅底。]]></content>
+      <categories>
+        <category>hobby</category>
+      </categories>
+      <tags>
+        <tag>私房菜</tag>
+        <tag>菜谱</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C programming]]></title>
     <url>%2F2017%2F12%2F25%2F2017-12-25-C-programming%2F</url>
     <content type="text"><![CDATA[Debug with C using GDBSegmentation faultThis is perhaps the most dauting bug we enconter, it may take a long time to identify the bug and why it happened. Suing the GDB debugger and the core file generated when a program dumps can be a life saving. But some linux distribution has a default setting that doesn’t generator core dump file(see this blog).In the terminal type1ulimit -a then set the core dump file size to be unlimited1ulimit -c unlimited Now run the excutatble file and it crashes with a core file in the current folder. Large array in C define the dimension of a arrary. The following definition is wrong123456789#include &lt;stdio.h&gt;#include &lt;math.h&gt;int main()&#123; int COl = 5; int ROW = 10; double Array[ROW][COL]; return 0;&#125; The right method is123456789#include &lt;stdio.h&gt;#include &lt;math.h&gt;#define COL 5#define ROW 10int main()&#123; double Array[ROW][COL]; return 0;&#125; Size of large array. By default, the C program allcoate a dynamic memory for the delcared array, this is inefficient when the size of array is large. A better way to do this is define them as staticor use malloc and free12345678#include &lt;stdio.h&gt;#include &lt;math.h&gt;#define COL 5#define ROW 10int main()&#123; static double Array[ROW][COL]; return 0; or we can do this12345678910#include &lt;stdio.h&gt;#include &lt;math.h&gt;#define COL 5#define ROW 10int main()&#123; double *Array = malloc(ROW*COL*sizeof(double)); free(Array); return 0; Install GCC in macFollow the instruction here and here. For mac users, the easiest way to install GCC is through1brew install gcc This will install the lateste version of gcc in /usr/l/usr/local/Cellar/gcc/7.2.0, to use it when compiling a c file, just1gcc-7 -g -o mytest mytest.c -I/User/shan/gsl/include -L/User/shan/gsl/lib -lgsl -lgslcblas -lm]]></content>
@@ -103,6 +103,19 @@
         <tag>segmentation fault</tag>
         <tag>pointer</tag>
         <tag>stack overflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mendeley and Endnote]]></title>
+    <url>%2F2017%2F11%2F12%2F2017-11-12-Mendeley-and-Endnote%2F</url>
+    <content type="text"><![CDATA[EndnoteThe lateste version is Endnote X8, which has improved a lot compared several years ago. Some new features such us synchronization, folder wathch etc are now all impplemented in this software. After uptdata to MacOS high sierra, mendeley seems doesn’t work (completely crashes!) , this bug couldn’t be fixed in the near future. That’s why I have to move to Endnote X8 for a whie. Luckly, PKU has bought the licience. Export bibtex for LaTexSince I work a lot with Latex, the first thing I want to setup is export bibtex style reference record into BibDesk. In mendely this is very simple, just right click and slect Export to Bibtex entry. While in Endnote, we have to configure the export stytle Some tutorialsEndnote provides some excellent official tutorials, which can be found in Youtube]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>install</tag>
+        <tag>word plugin</tag>
+        <tag>bibtex export</tag>
       </tags>
   </entry>
   <entry>
@@ -122,9 +135,25 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Learning Shell]]></title>
+    <url>%2F2017%2F08%2F22%2F2017-08-22-Shell-Learning%2F</url>
+    <content type="text"><![CDATA[Some basic usage 变量和显示单引号和双引号的区别，后者中不能直接使用“!”.12echo "can not inculde !"-bash: !": event not found 另外一种方式是使用printf 函数，如1$ printf "Hello world 显示跟某个进程相关的环境变量1$ cat /proc/12501/environ 计算变量中字符的长度1length=$&#123;#var&#125; 添加环境变量和搜索路径.在 ~/.bahsrc文件中添加12export PATH=/opt/myapp/bin:$PATHexport LD_LIBRARY_PATH=/opt/myapp/lib;$LD_LIBRARY_PATH 或者先在~/.bahsrc文件中添加1prepend() &#123; [ -d "$2" ] &amp;&amp; eval $1=\"$2':'\$$1\" &amp;&amp; export $1; &#125; 然后使用prepend添加12prepend PATH /opt/myapp/binprepend LD_LIBRARY_PATH /opt/myapp/lib ##Math in shell 常用的命令 let,(( )), 和 [ ]，还有expr 和 bc 使用let就可以免去使用$,例如 12345#!/bin/bashno1=4;no2=5;let result=no1+no2echo $result []的使用与let类似，更多的用法如下 12345result=$[ no1 + no2 ]result=$[ $no1 + 5 ]result=$(( no1 + 50 ))result=`expr 3 + 4`result=$(expr $no1 + 5) 注意，上述运算都只对整数有效 浮点运算.基本格式为variable=$(echo &quot;OPTIONS; OPERATIONS&quot; | bc)1234v1=2.0v2=3.33v3=$(echo "scale=3;$v1/$v2"|bc)#此处scale用于设置数值精度，bc默认精度0，也就只保留整数位]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>linux</tag>
+        <tag>script</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[GitHub and Bitbucket]]></title>
     <url>%2F2017%2F08%2F15%2F2017-08-15-GitHub%20and%20Bitbucket%2F</url>
     <content type="text"><![CDATA[work with branches 多个分支的提交与合并 Git分支管理策略 A successful Git branching model github 上的教程，使用分支 git 常用命令清单 use git diff branch_1..branch_2 to compare the difference of two branches 一个很好的教程 使用beyond compare 来解决merge 过程中的冲突, mac 下的配置. 使用方法1234git config --global diff.tool bc3git config --global difftool.bc3.trustExitCode truegit config --global merge.tool bc3git config --global mergetool.bc3.trustExitCode true Mac 下分支合并步骤 一个例子12345678910111213141516171819202122232425#查看当前分支git branch#切换到 master 分支git checkout master#比较更改git diff master develop#或者使用 可视化的工具，比如beyond compare，关于其配置见上面链接git difftool master develop# 合并分支git merge --no-ff develop# 解决冲突git mergetool conflictifle# 重新提交git commit -a#推送到远端仓库git push origin master# 删除分支git branch -d [branch-name]# 新建一个分支，并切换到该分支git checkout -b [branch]# 切换到指定分支，并更新工作区git checkout [branch-name]]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
       <tags>
         <tag>github</tag>
         <tag>code</tag>
@@ -140,6 +169,51 @@
       <tags>
         <tag>word count</tag>
         <tag>layout</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[aria2]]></title>
+    <url>%2F2017%2F06%2F11%2F2017-06-11-aria2%2F</url>
+    <content type="text"><![CDATA[MAC aria2 安装和配置如果在Mac 下想告诉下载文件，又不想安装迅雷，aria2 是理想的选择。轻量，简介，并且可以让百度网盘中的文件快速导出下载。 安装最简单的是命令行下安装brew install aria2 配置然后是配置文件mdkir ./aria2cd ./aria2touch aria2 使用结合Aria2 WebUI 来使用 debug常见错误解决见此处 ###相关教程 Aria2配置教程（Mac和Windows) Mac下载神器aria2]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>aria2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Academic writing]]></title>
+    <url>%2F2017%2F06%2F10%2F2017-06-10-Academic-Writing%2F</url>
+    <content type="text"><![CDATA[Academic writing differce a lot from other forms of writing, sometimes it can be hard for non-native English speakers. Here I summarize some online resources that I found it relieve the pain writing your first journal-like paper. While the source mainly focus on the field of biomedicine, it should also appliable to other STEM and even humanity disciplines. To improve writing quality, practice is essential. Rewriting and revision are also important. Only after several round of iterations between writing and revision, could a draft look like fullfil all the demond for publication. Even good writers take rewrite serirously. To save time, one tip I have learn is organize your outline and structure and discuss with others, such as your supervisor and collegues, revise your outline and then find a regular block of time doing purely nothing. Writing is a highly intensive labor and demonds a lot of energy and focus. To release the bitter, half an hour to one hour is enough everyday. Useful source on academic writingHere I list several useful online writing source and books about academic writing How to write your first research paper How to write a paper in scientific journal stytle and format. This online source from Bates College provide comprehensive and doable tutorial on writing journal stytle paper in biomedical field. Whitesides’ Group: Writing a paper. Suggestions on writing outline from a prominent scientist in Harvard. English Communication for Scientists. A column from Nature education, provides general guide principle not only on academic writing but also communication skills to general audience. How to write research articles. UCSF career center, you can also find useful tips on delivering scientific presentation, designing a poster and job interview. Resource from UIUC, gives very comprehensive tips, from style to paragraph to grammar Some books convering this topic Science research writing for non-native speakers of English To the point — a dictionary of concise writing A manual for writers of research papers, theses and dissertations The elements of stytle The craft of research Academic writing for publish — A practical handbook A field guide for science writers Stytle— Toward clairty and grace Writing science — how to write papers that get cited and proposals that get funded The Chicago manual of stytle General English Experience English This website provides useful tutorial on general English. Test your vocabulary Stephen King’s advice on being a good writer]]></content>
+      <categories>
+        <category>academic</category>
+      </categories>
+      <tags>
+        <tag>writing</tag>
+        <tag>English</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Cooking]]></title>
+    <url>%2F2017%2F06%2F07%2F2017-06-07-cooking%2F</url>
+    <content type="text"><![CDATA[Useful resource about good cooking Recommonded books]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Software Installation]]></title>
+    <url>%2F2017%2F05%2F27%2F2017-05-27-software-installation%2F</url>
+    <content type="text"><![CDATA[Install MATLAB in LinuxTo install MATLAB in linux mchine, first downloaded two iso files. Then mount the frist one one a folder under the root file:mkdir /mntmount -t auto -o loop R2017a1.iso /mntcd /mnt./installWhen it process around 80%, it will pops out a ui to remind you to mount the second iso file. So use the same command to mount it under the same folder.By default, it will install MATALB under /usr/local, but if you specify your installation foler, remember to build a folder name as MATLAB2017a first, since all the installed files will be put inside this folder and you probably don’t want to mess up a folder. Instruction can be found here and here. Add desktop shortcutYou can first open MALAB by typing/usr/local/MATLAB2017a/bin/maltabin the commond line, and after the launch, you can right click the icon and select “add to dash”. So next time you can easily find the icon of MATLAB in you application]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Opitmization Algorithm]]></title>
+    <url>%2F2017%2F05%2F25%2F2017-05-25-Optimization-Algorithms%2F</url>
+    <content type="text"><![CDATA[CMA-ESA non-derivative stochastic second order optimization algorithm, covariance matrix adaptation - evolution strategy (CMA-ES) is a successful algorithm for non-convex optimization. I use it to find the optimal interaction matrix that achieves maximum mutual information. Here are links for introduction and tutorials for implementation inf MATLAB, Python. A comprehensive introduction and resources related to this algorithm is here Here is the GitHub site to download the latest python version and here Talks and slides by Nikolaus Hansen Several implementations with various programming languages can be found here]]></content>
+      <categories>
+        <category>academic</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>optimization</tag>
       </tags>
   </entry>
   <entry>
@@ -159,6 +233,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Information theory]]></title>
+    <url>%2F2017%2F05%2F03%2F2017-02-16-Information-Theory%2F</url>
+    <content type="text"><![CDATA[How to better understand information theory? Here are some good answers to what is information? How Claud Shannon come up with the idea and some related material. A very intuitive explaination of Shannon’s information theory can be found in the Science4all website. This website also post some blogs and articles about probability, statistical interference and so on. For instance the introduction of mathematical idea in 20 century. Some discussion on quora about the concept of information entropy. Algorithms to estimate entropy, mutual information and KL divergencyThe following algorithms work well for estimating differential entropy of mutivariate distribution. k-d partitioning entropy estimator. This is so the most accurate alogrithm, although it is slower, especially when the dimension is high, typically it works well for dimension of 4 ~ 6 Estimators for Information Theoretic Functionals using Influence Functions. Fast, but with bias PYM entropy estimator. Haven’t try it yet MIToolbox. Works for discrete data ITE Toolbox This is the most comprehensive toolbox providing various functions to do the estimation of differential entropy and MI. Almost contain all other function implemented at the above toolboxes. You need read the acompany document. Here is the python version JIDT This a java based toolkit that calculate transfer entropy and mutual information from time serial trajectoies. It has Python, MATLAB, R versions PyBrain A powerful python machine learning library, which also integrates some alogrithm us as CMA-ES, NES.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Learning python]]></title>
     <url>%2F2017%2F02%2F16%2F2017-02-16-Python%2F</url>
     <content type="text"><![CDATA[Useful resource about learning python. Wiki textbooks Official documentation of Python 3 the hitchhiker’s guide to Python 小白学Python Very compreshensive tutorial of how to make Sublime text 3 and Anaconda to be Python IDE is here and here Useful online learning material from GitHub and here A website that you can find best learning resource Python stytle guide 知乎上的推荐 Awsome python packgage Python 中目录和文件夹访问 关于编程的一个很好的blog Online learning of book learning python the hardway python 科学计算教程 python 绘图, 还有这个 各种科学绘图的比较 python 风格指南 python argparse用法总结, 还有这儿 Answers from Quora about learning python - quora1 about learning python - quora2 python 3 cookbook 中文 SciPy tutorial How to design programspython function 函数的参数 这个讲得很清楚regular expression in pyton 正则表达式-廖雪峰 Python正则表达式指南 set up build environment of Sublime for python here is a YouTube tutorial how to configure your sublime editor for python, you can also specify the build version to be python 2.x or 3.x configure your sublime texteditor for Python can be found here Configure the plugin anaconda can be found here Configuration of sublime for python TensorFlow 中文社区 一个学习笔记 学习笔记 Google course Google pretrained models Jupyter notebook Installation for both python2 and python3 . This website provides instruction to install both jupyter for both versions. Open Jupyter Notebook. First, type source activate py3 in the promte, and then typ jupyter notebook Solve “doesn’t understand the open location “ problem This probably a Mac issue. One trick is by specifying the web surface in ~/.jupyter/jupyter_notebook_config.py by adding c.NotebookApp.browser = u&#39;chrome&#39;. trouble shooting tensorflow When I install anaconda in my mac pro, the jupyter notebook works well, but when I type import tesorflow as tf, it popout couldn’t find module. Here is how I fix this bug Create an environment for tensorflow conda -n tensorflow Activate this environment source activate tensorflow Check what are the jupyter and ipython verson. They are probably not in this environment. To intall them, type conda install ipython and pip install jupyter (in my cas pip3 doesn’t work, although I used python 3). Now tpyte which ipython and which jupyter to check if they have been installed properly source deactivate and source activate tensorflow Open jupyter notebook by typing jupyter notebook. Then tensorflow should be able to be imported successfully. To check what python packages are in the tensorflow virtual environemnt, conda list. Install other package by conda isntall packagename Jupyter notebook tricks This site provides very useful tips of jupyter notebook. manage conda and show in jupyter notebook For anaconda3, install nb_conda by conda install nb_condaanaconda Install and update OptimizersThere are bunch of optimizers in TensorFlow, how to choose one suitable for a certain network and data? Here are some blogs make this quesion clearer. Comparsion of gradent-descent alogorithms For shallow networks, sgd+Nesterov should be OK, while for deep networks usually Adam is fairly good enough Some concepts cross-entropy Packages and toolboxes Autograd This package enables calculating gradient of complex of customed functions, which is handy is the fucntion is not supported in TensorFlow. graphics in python Matplotlib 教程 Matplotlib tutorial 十分钟入门Matplotlib-[save to pdf] In order to export figures to pdf files, we need12345678from matplotlib.backends.backend_pdf import PdfPagesimport matplotlib.pyplot as plt...pp = PdfPages(filename)plt.figure()...pp.savefig()pp.close() To check the supported figure type, just use plt.gcf().canvas.get_supported_filetypes() Matplot gallary You can find all examples and related script if you want to achieve some function in your graphics. A good example to demonstrate how to make pretty figure using matplot Another tutorial debug Python Jupyter Notebook 中的错误异常与代码调试 IBM 开发者论坛 Python 代码调试技巧 在 notebooke 中执行 %xmode Plain 可以设置为当异常发生时只展示简单的异常信息；在 notebooke 中执行 %xmode Verbose 来还原显示详细异常信息的模式。在错误异常发生时，我们可以运用%debug来进行代码调试，输入quit则退出该模式。输入up来对外层函数进行调试。在 notebooke 中执行%pdb on可以设置为当异常发生时自动进入调试模式 The Brian2 pacakageThis is package facilitate large scale modeling of firing neurons. See the [brian2] ()main page for instruction of installation and usage.]]></content>
@@ -166,8 +245,8 @@
         <category>programming</category>
       </categories>
       <tags>
-        <tag>resource</tag>
         <tag>python</tag>
+        <tag>resource</tag>
         <tag>jupyter</tag>
         <tag>anaconda</tag>
         <tag>plot</tag>
@@ -175,9 +254,37 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Deep learning]]></title>
+    <url>%2F2017%2F02%2F15%2F2017-02-15-deeplearning%2F</url>
+    <content type="text"><![CDATA[Resource about deep learning. Online textbooks: Neural Networks and Deep Learning, deeplearningbook Here are several bologs talking about the relation between machine learning and statistical mechanics, which is very insightful. The authors also gives some comment and historical introduction of this field. Basic online course The Spectator A very good website built by a scientist from DeepMind with posts about statistical and machine learning. [DeepLeaning 0.1 document]http://deeplearning.net/tutorial/contents.html Contain many comprehensive tutorial of neural network archetectures. mathematic foundation of deep learning Courses code resource from deeplearning.orgUnsupervised Feature Learning###AutoencoderVery comprehensive lecture notes and tutorial from Stanford Univerisity. Tutorial and here Variation auto encoder Variational Autoencoders Explained Tutorial - What is a variational autoencoder? Variational Autoencoder in TensorFlow Example for 2-D VAE:Intuition and ImplementationRestricted Boltzman Machine Benjio’s explanation of RBM Introduction to Restricted Boltzmann Machines This is an excellent intro, with very intuitive explanation Optimization algorithms Comparsion of algorithms. This blog gives a comprehensive comparision of mainstream algorithm used in ML, related reading material is also provided. Also in StackOverflow, here is a comparision CNN tutorial. Matlab version of Adam Matlab version of SGDEvolution Strategy ES for enforcement learning OpenAI proposed the new learning strategy, see their post Data preprocessHere are some useful packages to refine and trim raw and messy data open refine ##PCA and ICA PCA 和 SVD 奇异值分解(SVD)与主成分分析(PCA) Reinforcement learning David Silver’s lecture]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Google scholar alerts]]></title>
+    <url>%2F2017%2F02%2F14%2F2017-02-14-google%20scholar%20alert%2F</url>
+    <content type="text"><![CDATA[Here is some information about how to get up-to-date alerts from Google Scholar or Web of Knowledge. You can use Google scholar alerts to track the citation of your own and other’s publications. Here is a tutorial of how to set the alerts. This post also gives information about similar settings in Web of Knowledge. If you just want to receive information of newly published papers regularly, say once a week, follow the instruction posted here. In order to make your query more accurate, you can use google search operators, which can be found here. For example, you can use OR between two words to match either of them, while you can use - to exclude a word. And you can use “” to do exact matching. Another direct way to create google alerts can be found here. By simply typing the phrases in the google scholar search box and you will find an envelope icon on the left site, then click that icon, you create the alterts.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Resource]]></title>
     <url>%2F2016%2F12%2F26%2F2016-12-26-Resource%2F</url>
     <content type="text"><![CDATA[Here is some useful resource Scholarpedia http://www.scholarpedia.org Academic search engine semanticscholar Check the impact of journals scimagojr Report from web of knowledge sciencewatch Edge About effective learningI find this blogs extremely useful in building a habit for better learning. Some tricks for better learning. Git and GitHub Some tutorial about git Git简明教程 廖雪峰的教程 简书上的，里面的图关于工作原理讲得很清楚 VPS 国外可靠的VPS服务商 bandwagon vultr ​ 配置服务器和shadowsocks VPS上搭建Shadowsocks科学上网的那些事 文末有BBR加速配置 搬瓦工+shadowsocks 科学上网 ubuntu搭建ss服务器(shadowsocks) vultr 配置教程 iPad Pro 常用软件 笔记相关的软件 和这个 PDF expert Notability 一个全面的介绍 绘图软件推荐 豆瓣介绍 知乎介绍 Sublime 使用MarkdwonEditing FileDiffs 20个强大的sublime 插件 使用技巧 sublime 常用快捷键]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Compressed sensing]]></title>
+    <url>%2F2016%2F12%2F26%2F2016-12-26-Compressed-sensing%2F</url>
+    <content type="text"><![CDATA[Here is some resource to understand recently developed compressed sensing (CS). For introduction in Chinese see here, Terrence Tao, one pioneer in this area has posted a bolog and gives a very simple and intuitive introduction of CS. 理解 compressed sensing 形象易懂讲解算法II——压缩感知 压缩感知和深度学习的关系 Algorithm beyond LASSO Iterative Hard Threshold. This alogrithm also works for nonlinear comprssed sensing under certain conditions. A bunch of related algorithm can be found in the ~/MATLAB/Tools/sparsify_0.5 folder Sparse signal recovery from nonlinear measurement]]></content>
+      <categories>
+        <category>academic</category>
+      </categories>
+      <tags>
+        <tag>compressed sensing</tag>
+        <tag>algorithm</tag>
+        <tag>project</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Bootstrap sampling]]></title>
+    <url>%2F2016%2F12%2F26%2F2017-03-20-bootstrap-sampling%2F</url>
+    <content type="text"><![CDATA[Here are the funciton and document of how to do bootstrap samplin in MATLAB. The bootfun is a function handle specified by @ and can be mean,corr,std or self-defined function]]></content>
   </entry>
   <entry>
     <title><![CDATA[Coding tips]]></title>
@@ -187,11 +294,23 @@
         <category>programming</category>
       </categories>
       <tags>
-        <tag>graphics</tag>
         <tag>coding</tag>
         <tag>matlab</tag>
         <tag>python</tag>
         <tag>R</tag>
+        <tag>graphics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MathJax Example]]></title>
+    <url>%2F2015%2F08%2F10%2F2015-08-10-mathjax-example%2F</url>
+    <content type="text"><![CDATA[MathJax is a simple way of including Tex/LaTex/MathML based mathematics in HTML webpages. To get up and running you need to include the MathJax script in the header of your github pages page, and then write some maths. For LaTex, there are two delimiters you need to know about, one for block or displayed mathematics \[ ... \], and the other for inline mathematics \( ... \). UsageTo enable MathJax support be sure Kramdown is your Markdown flavor of choice and MathJax is set to true in your _config.yml file. 12markdown: kramdownmathjax: true 12Here is an example MathJax inline rendering \\( 1/x^&#123;2&#125; \\), and here is a block rendering: \\[ \frac&#123;1&#125;&#123;n^&#123;2&#125;&#125; \\] Here is an example MathJax inline rendering \( 1/x^{2} \), and here is a block rendering:\[ \frac{1}{n^{2}} \] The only thing to look out for is the escaping of the backslash when using markdown, so the delimiters become \\[ ... \\] and \\( ... \\) for inline and block maths respectively. $$\begin{align} &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \ &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc} \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \ \vdots &amp; \ddots &amp; \vdots \ \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n) \end{array} \right) \left( \begin{array}{c} y_1 \ \vdots \ y_n \end{array} \right)\end{align}$$]]></content>
+      <tags>
+        <tag>markdown</tag>
+        <tag>mathjax</tag>
+        <tag>example</tag>
+        <tag>test</tag>
+        <tag>jekyll</tag>
       </tags>
   </entry>
 </search>
