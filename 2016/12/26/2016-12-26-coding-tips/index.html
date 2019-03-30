@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#fff">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#fff">
+
+
+
+
+
+  <meta name="keywords" content="coding,matlab,python,R,graphics,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="shan" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
+<meta name="keywords" content="coding,matlab,python,R,graphics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coding tips">
+<meta property="og:url" content="https://shawnqin.github.io/2016/12/26/2016-12-26-coding-tips/index.html">
+<meta property="og:site_name" content="shan">
+<meta property="og:description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-30T01:54:15.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coding tips">
+<meta name="twitter:description" content="saving and loading  MATLAB structure define data structure mystruct = struct(&amp;#39;fieldName1&amp;#39;,[],&amp;#39;fieldName2&amp;#39;,[],...), setting the values of each field: mystruct.fieldName1 = variable1.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shawnqin.github.io/2016/12/26/2016-12-26-coding-tips/">
+
+
+
+
+
+  <title>Coding tips | shan</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">shan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home //首页"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user //关于"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags  //标签"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th  //分类"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive  //归档"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shawnqin.github.io/2016/12/26/2016-12-26-coding-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shanshan Qin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coding tips</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T00:00:00+08:00">
+                2016-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">programming</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/12/26/2016-12-26-coding-tips/" class="leancloud_visitors" data-flag-title="Coding tips">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="saving-and-loading-MATLAB-structure"><a href="#saving-and-loading-MATLAB-structure" class="headerlink" title="saving and loading  MATLAB structure"></a>saving and loading  MATLAB structure</h2><ul>
+<li><p>define data structure <code>mystruct = struct(&#39;fieldName1&#39;,[],&#39;fieldName2&#39;,[],...)</code>, setting the values of each field: <code>mystruct.fieldName1 = variable1</code>.  </p>
+</li>
+<li><p>save struct preserve individual variables <code>save(saveFileName, &#39;-struct&#39;,&#39;mystruct&#39;)</code>  </p>
+</li>
+<li><p>run matlab in command line or Linux cluster. Use <code>varargin</code> to pass parameters, use <code>matlab -r &quot;myscript(2)&quot;</code> to run matlab script.</p>
+</li>
+<li><p>enable parallel computing. MATLAB has several parallel computing tool boxes enable you to use the multiple cores to accelerate your code. The simplest way is at the beginning of script, inserting <code>matlabpool numberofpool</code> (after MATLAB 2013b，it is replaced by <code>parpool</code>), at the end of script add <code>matlabpool colse</code>. It seems that you cannot put a breakpoint inside a parfor loop.</p>
+</li>
+<li><p>passing external parameters * When running a MATLAB script or function on  a Linux cluster, the easiest way to pass paramter is use ajob submission shell script and use <code>matlab -r &quot;myfunc(2)&quot;</code> to pass paramters. Other methods can be found <a href="https://cn.mathworks.com/matlabcentral/answers/97204-how-can-i-pass-input-parameters-when-running-matlab-in-batch-mode-in-windows" target="_blank" rel="noopener">here</a>.<code>matlabpool numberofpool</code> (after MATLAB 2013b，it is replaced by <code>parpool</code>), at the end of script add <code>matlabpool colse</code></p>
+</li>
+<li><p><em>Handle large matrix</em> After MATLAB 2011b, you can use <code>MAT-file</code> to save and load part of a <code>.mat</code> file which accelerate speed when you are running out of memory. The official document can be found <a href="http://blogs.mathworks.com/loren/2011/10/14/new-mat-file-functionality-in-r2011b/" target="_blank" rel="noopener">here</a>.<br> Usage: first tranform the big <code>mat</code> file into MAT-file, use <code>matObj = matfile(&#39;myBigData.mat&#39;)</code>. But inorder to use this fucnction the save <code>mat</code> file has to be version 7.3 format, use <code>save(&#39;myfile.mat&#39;,&#39;variables&#39;,&#39;-v7.3&#39;)</code>.</p>
+</li>
+<li><p><code>eval</code> This is a very useful function especially when you want to evaluate a certain commond or phrases in a loop or in a string vector. <code>feval</code> is the corresponding function for function handles.</p>
+</li>
+<li><p>Advanced programming techniques can be found <a href="https://math.la.asu.edu/files/support/docs/matlab_workshop/Adv_Programming.pdf" target="_blank" rel="noopener">here</a> and <a href="http://www2.engr.arizona.edu/~sail/matlab_optimization.pdf" target="_blank" rel="noopener">here</a>. Tips on writing MATLAB <a href="http://uk.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/21653/versions/3/previews/tutorial/writingFunctions.html" target="_blank" rel="noopener">function</a>. A stratege to overcome the downside of <em>varargin</em> is to specify the name of each parameters, by doing so you don’t need to worry about the orer of different arguments. For example : <code>function myfunc(varargin)
+ [A,B,C,D,E] = process_options(varargin,&#39;A&#39;,3,&#39;B&#39;,1,&#39;C&#39;,2,&#39;D&#39;,5,&#39;E&#39;,9)</code>; A tutorial of <a href="http://www2.engr.arizona.edu/~sail/matlab_optimization.pdf" target="_blank" rel="noopener">debuging and optimization</a>.</p>
+</li>
+</ul>
+<h2 id="Advanced-graphics-skill"><a href="#Advanced-graphics-skill" class="headerlink" title="Advanced graphics skill"></a>Advanced graphics skill</h2><ul>
+<li>Best way to get the handle of a graphic is from the call. For example<ul>
+<li><code>figH = figure(1,[10,200,10,200])</code> </li>
+<li><code>axH = axes()</code>.<br>Or obtain the handle manually using <code>gcf</code>,<code>gca</code> and <code>gco</code>.</li>
+</ul>
+</li>
+<li>Use <code>get</code> and <code>set</code> to query and set the value of objects of a graphic handle.<ul>
+<li><code>V = get(han,&#39;Property&#39;)</code></li>
+<li><code>V = set(han,&#39;Property1&#39;,&#39;Val1&#39;)</code></li>
+</ul>
+</li>
+<li><a href="http://cn.mathworks.com/help/matlab/ref/axes-properties.html#zmw57dd0e52818" target="_blank" rel="noopener">Axes properties</a> From MATLAB 2014b, you can use different ways to specifiy the properties of axis.</li>
+<li><a href="https://cn.mathworks.com/help/matlab/ref/figure-properties.html" target="_blank" rel="noopener">Figure 属性</a></li>
+<li><a href="http://matlab.izmiran.ru/help/techdoc/ref/figure_props.html#WindowStyle" target="_blank" rel="noopener">Dock and undock figures</a> You can set figures to be docked or not by setting <code>figHandle.WindowStyle = &#39;docked&#39; or &#39;normal&#39;</code>. This will be useful if you want to specify the size of figures and export them out.</li>
+<li><a href="https://cn.mathworks.com/help/matlab/ref/print.html" target="_blank" rel="noopener">Print figure</a> If your want to print the figure as you set, you need to set <code>PaperPositionMode</code> to be <code>auto</code></li>
+</ul>
+<ul>
+<li><p><strong><a href="https://cn.mathworks.com/help/matlab/ref/axes-properties.html" target="_blank" rel="noopener">properties of axis</a></strong></p>
+</li>
+<li><p><strong>Covert figures to LaTex-friend graphics</strong>. Either use <a href="http://cn.mathworks.com/matlabcentral/fileexchange/21286-matlabfrag" target="_blank" rel="noopener"><code>matlabfrag</code></a>,<a href="https://github.com/ShawnQin/matlab2tikz" target="_blank" rel="noopener"><code>matlab2tikz</code></a>,<a href="https://github.com/altmany/export_fig" target="_blank" rel="noopener">export_fig</a></p>
+</li>
+<li><p>Since the default axis color of matalb figures is not pure black, this is really anoying . One way to set the default color into black is through the following command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set(groot,&#123;&apos;DefaultAxesXColor&apos;,&apos;DefaultAxesYColor&apos;,&apos;DefaultAxesZColor&apos;&#125;,&#123;&apos;k&apos;,&apos;k&apos;,&apos;k&apos;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Heat map of matrix</strong>, <code>imagesc</code> can generate good colormap, with <code>set(gca,&#39;CLim&#39;)</code> argument, one can further make the color map a higher contrast.</p>
+</li>
+<li><strong>Fine tune and save graphics properties for further use</strong>. You can adjust the every aspect of a figure in the GUI, and the got to <code>file</code>–&gt; <code>generate code</code>, it will generate a function that produce exactly what you see. This function can be repeatly used latter.</li>
+<li><strong>Print vector eps</strong>. Some times the output of <code>print -depsc</code> does not give the right vector graphics, try adding<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Sets RendererMode to 'manual' automatically</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">'Renderer'</span>, <span class="string">'Painters'</span>); </span><br><span class="line"><span class="comment">% or using the following</span></span><br><span class="line">print(gcf,<span class="string">'-depsc'</span>,<span class="string">'-painters'</span>,<span class="string">'myEps'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Advanced-settings-on-MATLAB-default-graphic-properties"><a href="#Advanced-settings-on-MATLAB-default-graphic-properties" class="headerlink" title="Advanced settings on MATLAB default graphic properties"></a>Advanced settings on MATLAB default graphic properties</h3><ul>
+<li><a href="http://steventhornton.ca/default-plot-settings-in-matlab/" target="_blank" rel="noopener">Default Plot Settings in Matlab</a> This is an excellent post on this topic.</li>
+</ul>
+<h2 id="gram-package"><a href="#gram-package" class="headerlink" title="gram package"></a>gram package</h2><p>here is the <a href="https://cn.mathworks.com/matlabcentral/fileexchange/54465-gramm--complete-data-visualization-toolbox--ggplot2-r-like-" target="_blank" rel="noopener">gram</a> package, which mimic the famous <code>ggplot2</code> pacakge in R, generating publish-quality graphics</p>
+<h2 id="Chebfun-package"><a href="#Chebfun-package" class="headerlink" title="Chebfun package"></a>Chebfun package</h2><p>A very useful numerical tool box for computing almost any function. see <a href="http://www.chebfun.org/" target="_blank" rel="noopener">here</a> for more detail. They also published a book of ODEs with many MATLAB analysis, can be freely downloaded <a href="http://people.maths.ox.ac.uk/trefethen/ExploringODEs10Nov2017.pdf" target="_blank" rel="noopener">here</a>. An online <a href="http://www.chebfun.org/docs/guide/" target="_blank" rel="noopener">tutorial</a> is also provided</p>
+<h2 id="Some-tips"><a href="#Some-tips" class="headerlink" title="Some tips"></a>Some tips</h2><ul>
+<li><strong>Block comments</strong>. You can you <code>%{</code> and <code>%}</code> pair to comment a block of code</li>
+<li><strong>Causion of global variables</strong>. To make sure you delete the global variables after finish using them</li>
+<li><p><strong>Passing extral parameter to complex function</strong>. Some times a complex function use another function as arguement, which itself contain other parameters</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%define function in extral m-file</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[r1 r2]</span> = <span class="title">myFun</span><span class="params">(x,a,b,c)</span></span></span><br><span class="line">	<span class="comment">% a,b,c are extral parameters</span></span><br><span class="line">	r1 = build_in_fun(x,a,b);</span><br><span class="line">	r2 = build_in_fun(x,a,c);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%in the main script</span></span><br><span class="line"><span class="comment">% set the parameters</span></span><br><span class="line">a = a1;</span><br><span class="line">b = b1;</span><br><span class="line">c = c1;</span><br><span class="line">passFun = @(x)myFun(x,a,b,c);  <span class="comment">%define it after assigning values ot a,b,c</span></span><br><span class="line"><span class="keyword">return</span> = mainFun(passFun, para1,para2,options)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Debug and breakpoint</strong> can be found <a href="https://cn.mathworks.com/help/matlab/ref/dbstop.html" target="_blank" rel="noopener">here</a> and <a href="https://cn.mathworks.com/help/matlab/matlab_prog/set-breakpoints.html" target="_blank" rel="noopener">here</a></p>
+</li>
+<li><strong>Passing extral parameter to the function</strong><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% define the function with extral parameter parsing</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span> = <span class="title">findArea</span><span class="params">(width,varargin)</span></span></span><br><span class="line">   defaultHeight = <span class="number">1</span>;</span><br><span class="line">   defaultUnits = <span class="string">'inches'</span>;</span><br><span class="line">   defaultShape = <span class="string">'rectangle'</span>;</span><br><span class="line">   </span><br><span class="line">   expectedShapes = &#123;<span class="string">'square'</span>,<span class="string">'rectangle'</span>,<span class="string">'parallelogram'</span>&#125;;</span><br><span class="line"></span><br><span class="line">   p = inputParser;</span><br><span class="line">   validScalarPosNum = @(x) isnumeric(x) &amp;&amp; <span class="built_in">isscalar</span>(x) &amp;&amp; (x &gt; <span class="number">0</span>);</span><br><span class="line">   addRequired(p,<span class="string">'width'</span>,validScalarPosNum);</span><br><span class="line">   addParameter(p,<span class="string">'height'</span>,defaultHeight,validScalarPosNum);</span><br><span class="line">   addParameter(p,<span class="string">'units'</span>,defaultUnits,@isstring);</span><br><span class="line">   addParameter(p,<span class="string">'shape'</span>,defaultShape,...</span><br><span class="line">                 @(x) any(validatestring(x,expectedShapes)));</span><br><span class="line">   addOptional(p,<span class="string">'test'</span>,<span class="number">1</span>,@isnumeric)</span><br><span class="line">   parse(p,width,varargin&#123;:&#125;);</span><br><span class="line">   </span><br><span class="line">   a = p.Results.width*p.Results.height; </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% now you can call the function in servearl ways</span></span><br><span class="line">a = findArea(<span class="number">7</span>);</span><br><span class="line">a = findArea(<span class="number">7</span>,<span class="number">3</span>);</span><br><span class="line">a = findArea(<span class="number">13</span>,<span class="string">'shape'</span>,<span class="string">'square'</span>);</span><br><span class="line">a = findArea(<span class="number">13</span>,<span class="string">'units'</span>,<span class="string">"miles"</span>,<span class="string">'shape'</span>,<span class="string">'square'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Generating-correlation-matrix"><a href="#Generating-correlation-matrix" class="headerlink" title="Generating correlation matrix"></a>Generating correlation matrix</h3><ul>
+<li>Some methods used to generate random or structured random correlation matrix see <a href="https://stats.stackexchange.com/questions/2746/how-to-efficiently-generate-random-positive-semidefinite-correlation-matrices" target="_blank" rel="noopener">here</a></li>
+<li>use <code>imgesc</code> to plot a heatmap of matrix, the color style can be customed</li>
+<li>Use the build in function <code>gallery(&#39;randcorr&#39;,X)</code>, where the eigenvalues are specified by <code>X</code>,whose sum should be <code>n</code>, the dimension of correlation matrix</li>
+</ul>
+<h2 id="MATLAB-parallel-tool"><a href="#MATLAB-parallel-tool" class="headerlink" title="MATLAB parallel tool"></a>MATLAB parallel tool</h2><p>Before MATLAB 2014, we can use <code>parfor</code> and <code>matlabpool local numWorkers</code> to parallelize the code. In MATLAB 2017, the implementation is more flexible and the utilization of <code>parfor</code> is slightly different, we don’t need to explicilty open matlab pool before <code>parfor</code>. See the <a href="https://cn.mathworks.com/help/distcomp/parfor.html" target="_blank" rel="noopener">document</a> for more information. A simple example is<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">specify_num_workers</span><span class="params">(w)</span></span></span><br><span class="line">  y = <span class="built_in">ones</span>(<span class="number">1</span>,<span class="number">100</span>);</span><br><span class="line">  <span class="comment">% w specifies maximum number of workers</span></span><br><span class="line">  <span class="keyword">parfor</span> (<span class="built_in">i</span> = <span class="number">1</span>:<span class="number">100</span>,w)</span><br><span class="line">    y(<span class="built_in">i</span>) = <span class="built_in">i</span>;</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p>When runining the parallel program on cluster, using <code>parpool(N)</code> to explicitly handle the timeout issue<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parpool(<span class="number">4</span>, <span class="string">'IdleTimeout'</span>, Inf)</span><br></pre></td></tr></table></figure></p>
+<p>###Explicit Paralleization</p>
+<p>MathWorks now offers two MATLAB toolboxes dedicated to parallelization: the Parallel Computing Toolbox (PCT), and the MATLAB Distributed Computing Server (MDCS) </p>
+<ul>
+<li>Implicit multithreading is automatically employed by numerous built-in MATLAB functions </li>
+<li>Explicit multiprocessing: Multiple instances of MATLAB run on several processors, often with shared memory, and execute a single MATLAB command or M-function concurrently. Supported by dedicated PCT programming constructs </li>
+<li>Distributed computing: Multiple instances of MATLAB run multiple independent computations on separate computers, each with its own memory, typically in a cluster, grid or cloud.</li>
+</ul>
+<p>####The Parallel Computing Toolbox</p>
+<ul>
+<li>Using more workers than available cores generally decreases performance due to increased task-switching and communication overheads </li>
+<li>the iteration values of a parfor statement must be increasing consecutive integers </li>
+</ul>
+<p>###The MATLAB Distributed Computing Server</p>
+<ul>
+<li>PCT only allows us to access computing resources (CPU cores or GPUs) on the same machine (node). It does not enable work parallelization across separate com- puting nodes (cluster, grid, or cloud) </li>
+<li>To run task across multiple nodes need some configuration of the MATLAB, see <a href="https://confluence.csiro.au/display/SC/Parallel+Computing+with+Matlab+on+a+Linux+cluster#ParallelComputingwithMatlabonaLinuxcluster-UsingtheParallelComputingToolbox" target="_blank" rel="noopener">here</a> for example. I also tried to test this in a folder <code>/Users/shan/Documents/MATLAB/paralTest</code> and <code>/home/tangc_pkuhpc/lustre1/ssqin/olfactoryCoding/optiInterMatrix/paralTest</code>. See also chapter 6 of the book  <code>acceleration MATLAB performance</code></li>
+</ul>
+<h2 id="Dealing-with-dependency"><a href="#Dealing-with-dependency" class="headerlink" title="Dealing with dependency"></a>Dealing with dependency</h2><ul>
+<li><a href="https://cn.mathworks.com/help/matlab/matlab_prog/identify-dependencies.html" target="_blank" rel="noopener">确定程序依赖项</a>. 使用 <code>matlab.codetools.requiredFilesAndProducts(&#39;myFun.m&#39;)</code> 可以详细列出<code>myFun.m</code> 所依赖的其他文件。</li>
+</ul>
+<h2 id="Random-number-generation​"><a href="#Random-number-generation​" class="headerlink" title="Random number generation​"></a>Random number generation​</h2><ul>
+<li><a href="http://www.inferencelab.com/rejection-sampling-matlab-demo/" target="_blank" rel="noopener">Rejection sampling</a>, simple yet inefficient</li>
+<li><strong>run matlab on cluster </strong>. When use <code>batch</code> to submit same program running on different CPU, one should causion about the random number seed. We can use <code>sleep 1s</code> in shell script, or reading an extral random number as the seeds.</li>
+</ul>
+<h2 id="Sparse-matrix"><a href="#Sparse-matrix" class="headerlink" title="Sparse matrix"></a>Sparse matrix</h2><ul>
+<li>use <code>spfun(myFun,S)</code>, where <code>myFun</code> is a function handle, <code>S</code> is the sparse matrix.</li>
+</ul>
+<h2 id="Permenantly-add-folder-and-subfolders-to-the-MATLAB-searching-path"><a href="#Permenantly-add-folder-and-subfolders-to-the-MATLAB-searching-path" class="headerlink" title="Permenantly add folder and subfolders to the MATLAB searching path"></a>Permenantly add folder and subfolders to the MATLAB searching path</h2><ul>
+<li><strong>Uisng the <code>startup.m</code> file</strong>. Creat the file under the path <code>/Applications/MATLAB_R2016b.app/toolbox/local&#39; or</code>/opt/MATLAB2017a/toolbox/local’<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% set the default folder when matlab start</span></span><br><span class="line">cd /full/path/of/folder/you/want</span><br><span class="line"></span><br><span class="line"><span class="comment">% add path</span></span><br><span class="line">addpath folername</span><br><span class="line"></span><br><span class="line"><span class="comment">%also add subfolders</span></span><br><span class="line">addpath(genpath(<span class="string">'foldername'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#Mathematica install</p>
+<ul>
+<li><a href="https://tiebamma.github.io/InstallTutorial/" target="_blank" rel="noopener">破解版</a>. 还有<a href="https://tiebamma.github.io/InstallTutorial/" target="_blank" rel="noopener">这个</a></li>
+</ul>
+<h1 id="C-language"><a href="#C-language" class="headerlink" title="C language"></a>C language</h1><h2 id="some-tutorial"><a href="#some-tutorial" class="headerlink" title="some tutorial"></a>some tutorial</h2><ul>
+<li>[online learning ]<a href="https://www.cprogramming.com/tutorial/c-tutorial.html" target="_blank" rel="noopener">https://www.cprogramming.com/tutorial/c-tutorial.html</a></li>
+</ul>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><ul>
+<li><a href="http://www.cnblogs.com/xuybin/p/3166904.html" target="_blank" rel="noopener">Valgrind</a> and also <a href="http://blog.csdn.net/caohao2008/article/details/5682291" target="_blank" rel="noopener">here</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-memleak/index.html" target="_blank" rel="noopener">IBM general introduction</a></li>
+<li>[Xcode instrument检查内】(<a href="http://blog.csdn.net/Zsk_Zane/article/details/52016411" target="_blank" rel="noopener">http://blog.csdn.net/Zsk_Zane/article/details/52016411</a>)</li>
+</ul>
+<h1 id="Useful-packages"><a href="#Useful-packages" class="headerlink" title="Useful packages"></a>Useful packages</h1><ul>
+<li><strong><a href="https://lvdmaaten.github.io/tsne/#implementations" target="_blank" rel="noopener">t-SNE</a></strong></li>
+</ul>
+<h1 id="CLS-集群"><a href="#CLS-集群" class="headerlink" title="CLS 集群"></a>CLS 集群</h1><h2 id="作业调度系统-SLURM"><a href="#作业调度系统-SLURM" class="headerlink" title="作业调度系统 SLURM"></a>作业调度系统 SLURM</h2><ul>
+<li><a href="https://slurm.schedmd.com/cpu_management.html" target="_blank" rel="noopener">官网介绍</a></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST</span><br><span class="line">debug*       up      30:00      1  down* c12b01n02</span><br><span class="line">debug*       up      30:00      1   idle c12b01n01</span><br><span class="line">cn-test      up 13-00:00:0      1 drain* c01b01n01</span><br><span class="line">cn-test      up 13-00:00:0      5   idle c01b01n[02-06]</span><br><span class="line">cn-large     up 5-00:00:00      7 drain* c13b04n[01,04],c15b04n[07,10],c16b02n14,c16b04n[01,05]</span><br><span class="line">cn-large     up 5-00:00:00     30  dow</span><br></pre></td></tr></table></figure>
+<p>Here the <em> following debug means that the <strong>default partition</strong> for submitted jobs.  The </em> following the state <em>down</em> indicate the nodes are <strong>not responding</strong>.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adev0: squeue</span><br><span class="line">JOBID PARTITION  NAME  USER ST  TIME NODES NODELIST(REASON)</span><br><span class="line">65646     batch  chem  mike  R 24:19     2 adev[7-8]</span><br><span class="line">65647     batch   bio  joan  R  0:09     1 adev14</span><br><span class="line">65648     batch  math  phil PD  0:00     6 (Resources)</span><br></pre></td></tr></table></figure>
+<p> Typical reasons for pending jobs are <em>Resources</em> (waiting for resources to become available) and <em>Priority</em>(queued behind a higher priority job)</p>
+<p>The <code>scontrol</code>command can be used to report more detailed information about nodes, partitions, jobs, job steps, and configuration. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>SBATCH -J mat104648</span><br><span class="line"><span class="meta">#</span>SBATCH -p cn-short</span><br><span class="line"><span class="meta">#</span>SBATCH -N 1</span><br><span class="line"><span class="meta">#</span>SBATCH -o mat104648_%j.out</span><br><span class="line"><span class="meta">#</span>SBATCH -e mat104648_%j.err</span><br><span class="line"><span class="meta">#</span>SBATCH --no-requeue</span><br><span class="line"><span class="meta">#</span>SBATCH -A tangc_g1</span><br><span class="line"><span class="meta">#</span>SBATCH --qos=tangccns</span><br><span class="line"><span class="meta">#</span>SBATCH --nodelist=c01b06n05</span><br><span class="line"><span class="meta">#</span>SBATCH -c 20</span><br><span class="line">pkurun  matlab -r SolveTargetFun</span><br></pre></td></tr></table></figure>
+<p>Specifify more nodes in script, it is hard to achieve, but we can work around by exclude some nodes</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>SBATCH -x ./nodelist</span><br></pre></td></tr></table></figure>
+<p>the content of node list is just those nodes with state <code>mix</code>, comma separated<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c01b01n[07-12],c01b02n02,c01b05n[05-08,11-12],c02b05n[05-06,10],c03b01n[05,08,11-12],c03b02n12,c03b03n03,c03b04n[04,08-10],c04b01n[01-02,04,10-11],c04b02n[01-03],c05b01n[01,05,07,09-10],c05b03n[10-12],c05b05n[09-10,12],c06b04n09</span><br></pre></td></tr></table></figure></p>
+<p>A example for submite<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>read the rng seed file</span><br><span class="line">seed=($(awk '&#123;print $1&#125;' rngSeed.txt))</span><br><span class="line">echo $seed</span><br><span class="line"></span><br><span class="line">fName='gcmiWhole_sum_new'</span><br><span class="line">num=(1)</span><br><span class="line">allN=(100)</span><br><span class="line"><span class="meta">#</span>allN=(100)</span><br><span class="line"> 11 allR=(30)</span><br><span class="line"> 12 #allR=(6 7 7)</span><br><span class="line"> 13 #N=100</span><br><span class="line"> 14 #R=21</span><br><span class="line"> 15</span><br><span class="line"> 16 #number of nonzero element</span><br><span class="line"> 17 Cons="'none'"</span><br><span class="line"> 18</span><br><span class="line"> 19 tp='wholeMat'</span><br><span class="line"> 20 corr='indep'</span><br><span class="line"> 21 S1=30</span><br><span class="line"> 22 R0=1</span><br><span class="line"> 23 S0=1</span><br></pre></td></tr></table></figure></p>
+<h3 id="File-transfer-in-Mac-using-FileZilla"><a href="#File-transfer-in-Mac-using-FileZilla" class="headerlink" title="File transfer in Mac using FileZilla"></a>File transfer in Mac using FileZilla</h3><p>With simple configuration, we can transfer files to cluster without repeatly type the password.</p>
+<ul>
+<li>First, login <code>10.100.1.88</code>, and download a samll client <code>shterm-client</code> (better put it inside <code>Applications</code>).</li>
+<li>Second, select one or more hosts and double clicks, it will pop out a small window asking you whether open <code>shterm</code>, hit yes.</li>
+<li>Now you can see <code>filezilla</code> automatically popout. Succeed!</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+      
+    </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/coding/" rel="tag"># coding</a>
+          
+            <a href="/tags/matlab/" rel="tag"># matlab</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/R/" rel="tag"># R</a>
+          
+            <a href="/tags/graphics/" rel="tag"># graphics</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/26/2016-12-26-Resource/" rel="next" title="Resource">
+                <i class="fa fa-chevron-left"></i> Resource
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/29/2017-06-29-LaTex-Note/" rel="prev" title="LaTex Note">
+                LaTex Note <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Shanshan Qin">
+            
+              <p class="site-author-name" itemprop="name">Shanshan Qin</p>
+              <p class="site-description motion-element" itemprop="description">生命不息，折腾不止</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ShawnQin" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="qinss.pku@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ShawnQinPKU" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/profile.php?id=100011737431652" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#saving-and-loading-MATLAB-structure"><span class="nav-number">1.</span> <span class="nav-text">saving and loading  MATLAB structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advanced-graphics-skill"><span class="nav-number">2.</span> <span class="nav-text">Advanced graphics skill</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced-settings-on-MATLAB-default-graphic-properties"><span class="nav-number">2.1.</span> <span class="nav-text">Advanced settings on MATLAB default graphic properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gram-package"><span class="nav-number">3.</span> <span class="nav-text">gram package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chebfun-package"><span class="nav-number">4.</span> <span class="nav-text">Chebfun package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-tips"><span class="nav-number">5.</span> <span class="nav-text">Some tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-correlation-matrix"><span class="nav-number">5.1.</span> <span class="nav-text">Generating correlation matrix</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB-parallel-tool"><span class="nav-number">6.</span> <span class="nav-text">MATLAB parallel tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealing-with-dependency"><span class="nav-number">7.</span> <span class="nav-text">Dealing with dependency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-number-generation​"><span class="nav-number">8.</span> <span class="nav-text">Random number generation​</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparse-matrix"><span class="nav-number">9.</span> <span class="nav-text">Sparse matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permenantly-add-folder-and-subfolders-to-the-MATLAB-searching-path"><span class="nav-number">10.</span> <span class="nav-text">Permenantly add folder and subfolders to the MATLAB searching path</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#C-language"><span class="nav-number"></span> <span class="nav-text">C language</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#some-tutorial"><span class="nav-number">1.</span> <span class="nav-text">some tutorial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存管理"><span class="nav-number">2.</span> <span class="nav-text">内存管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Useful-packages"><span class="nav-number"></span> <span class="nav-text">Useful packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CLS-集群"><span class="nav-number"></span> <span class="nav-text">CLS 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作业调度系统-SLURM"><span class="nav-number">1.</span> <span class="nav-text">作业调度系统 SLURM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File-transfer-in-Mac-using-FileZilla"><span class="nav-number">1.1.</span> <span class="nav-text">File transfer in Mac using FileZilla</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shanshan Qin</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+
+
+
+
+
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.7k字</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'f79533'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
