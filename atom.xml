@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shawnqin.github.io/"/>
-  <updated>2019-03-29T14:31:10.361Z</updated>
+  <updated>2019-03-29T17:21:47.355Z</updated>
   <id>https://shawnqin.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo</title>
+    <link href="https://shawnqin.github.io/2019/03/30/hexo/"/>
+    <id>https://shawnqin.github.io/2019/03/30/hexo/</id>
+    <published>2019-03-29T17:18:09.000Z</published>
+    <updated>2019-03-29T17:21:47.355Z</updated>
+    
+    <content type="html"><![CDATA[<p>#搭建个人博客和主页的简单方法</p><p>##有用的几个资料</p><ul><li><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">Hexo-NexT配置超炫网页效果</a></li><li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#fn:2" target="_blank" rel="noopener">非常详细的Next主题页面配置</a>  这篇文章中给出的配置非常全，再复制使用前先搞明白每个表示什么意思</li><li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">来自知乎上的资料</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#搭建个人博客和主页的简单方法&lt;/p&gt;
+&lt;p&gt;##有用的几个资料&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/9f0e90cc32c2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo-NexT配置
+      
+    
+    </summary>
+    
+    
+      <category term="computer" scheme="https://shawnqin.github.io/tags/computer/"/>
+    
+      <category term="blog" scheme="https://shawnqin.github.io/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>LaTex Note</title>
