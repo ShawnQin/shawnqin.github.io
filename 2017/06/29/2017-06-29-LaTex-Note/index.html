@@ -126,18 +126,18 @@
 
 
 
-<meta name="description" content="some useful resource Word count. TexCount is a project enable count of words in LaTex file. Simply downlaod and run the perl script texcount -[option] file 排版格式  manage .bib file Bibliography manageme">
+<meta name="description" content="Useful tips of LaTex">
 <meta name="keywords" content="word count,layout">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex Note">
 <meta property="og:url" content="https://shawnqin.github.io/2017/06/29/2017-06-29-LaTex-Note/index.html">
 <meta property="og:site_name" content="shan">
-<meta property="og:description" content="some useful resource Word count. TexCount is a project enable count of words in LaTex file. Simply downlaod and run the perl script texcount -[option] file 排版格式  manage .bib file Bibliography manageme">
+<meta property="og:description" content="Useful tips of LaTex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-29T14:31:10.361Z">
+<meta property="og:updated_time" content="2019-04-01T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTex Note">
-<meta name="twitter:description" content="some useful resource Word count. TexCount is a project enable count of words in LaTex file. Simply downlaod and run the perl script texcount -[option] file 排版格式  manage .bib file Bibliography manageme">
+<meta name="twitter:description" content="Useful tips of LaTex">
 
 
 
@@ -387,8 +387,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-03-29T22:31:10+08:00">
-                2019-03-29
+              <time title="Post modified" itemprop="dateModified" datetime="2019-04-02T00:00:00+08:00">
+                2019-04-02
               </time>
             
           </span>
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  359
+                  1.6k
                 </span>
               
 
@@ -442,12 +442,16 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  6
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  Useful tips of LaTex
+              </div>
           
 
         </div>
@@ -463,7 +467,59 @@
       
 
       
-        <h2 id="some-useful-resource"><a href="#some-useful-resource" class="headerlink" title="some useful resource"></a>some useful resource</h2><ul>
+        <h2 id="LaTex-简介"><a href="#LaTex-简介" class="headerlink" title="LaTex 简介"></a>LaTex 简介</h2><p>既然我们有强大的 MS Word等文字处理软件，为何还要折腾LaTex？我的答案是，很多情况下Word对于排版真的是力不从心，尤其是当我们写比较复杂的文档时，比如博士论文，或者当文档中有比较多的数学或其他符号时。还记得在Word中插入公式时的那种生不如死的感觉吗？以及你插入的公式也许老板的电脑上还不能正确显示的时候。</p>
+<p>相比于Word这种“所见即所得“的排版模式，LaTex更像是一种编程语言，它能让你更专注于写作内容本身，而不是花费大量的时间担心各种排版细节。这是我最喜欢LaTex的一个原因。关于排版和LaTex的发展历史，感兴趣的可以参看包太雷所著的《LaTex Note-雷太赫排版系统简介》(这是一本写作风格上十分幽默(逗比)，短小精悍的参考资料，非常值得一读)。以我自己写博士论文的经验来看，花费两天时间调教好博士论文LaTex模板，后续整个写作过程都不用担心诸如目录，图片插入位置、页眉、公式编号、交叉引用、参考文献格式等一些列繁琐的问题。仅仅这一点，就值得我们花点时间来学习并使用，个人强烈推荐用LaTex写博士论文(但唯一不足的是男神汤不使用LaTex，也许最好的办法是把他教会)。<br>LEX排版相对于所见即所得系统的优势有<br><div class="note info"><ul>
+<li>高质量，它制作的版面看起来更专业，数学公式尤其赏心悦目</li>
+<li>结构化，文档结构清晰</li>
+<li>批处理，源文件是文本文件，便于批处理</li>
+<li>挂平台，兼容所有的操作系统</li>
+<li>开源</li>
+</ul></div></p>
+<p>不足之处<br><div class="note info"><ul>
+<li>学习曲线较陡峭，需要一定的学习成本</li>
+<li>制作文档过程繁琐，可能需要多次编译，不能实时看到结果</li>
+<li>排版样式相对单一，缺乏灵活性</li>
+<li>宏包质量良莠不齐</li>
+</ul></div></p>
+<p>谈到LaTex的历史，就不得不提Donald E. Knuth老爷子(没错，就是那位写The Art of Computer Programming的作者，那套书已经写了四十多年了！)。1962年，24岁的他时候就着手写一本关于编译器的书，结果一发不可收拾，一下写了3000多页，结果出版商说这手稿太厚，最好分卷出版。而当1976年第二卷出版时，Knuth觉得排版是在难看(嗯，强迫症~)，于是一怒之下，决定自己写一个排版的引擎，这就是TEX的由来。1980 年代初期，斯坦福研究所 (Stanford Research Institute, SRI) 的 Leslie Lamport开发了一种新的格式，也就是 LATEX。</p>
+<p>对于我们初学者来说，并不用知道诸如引擎、宏包和驱动的概念，这些都被封装在称之为”发行版“(distribution)中了。发行版有时也会带一个编辑器，但未必符合你的口味。常见的发行版如下表</p>
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>发行版</th>
+<th>编辑器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用</td>
+<td>TeXLive</td>
+<td>TeXworks</td>
+</tr>
+<tr>
+<td>windows</td>
+<td>MikTeX</td>
+<td>TeXstudio</td>
+</tr>
+<tr>
+<td>Mac OS</td>
+<td>MacTex</td>
+<td>TeXshop</td>
+</tr>
+</tbody>
+</table>
+<p>##LaTex的安装<br>最简单和省心的方式就是直接安装整个发行版，根据自己的操作系统，选择相应的发行版。</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装LaTex发行版"><a href="#安装LaTex发行版" class="headerlink" title="安装LaTex发行版"></a>安装LaTex发行版</h4><p>Windows系统可在<a href="http://tug.org/texlive/acquire-netinstall.html" target="_blank" rel="noopener">此处</a>或<a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华镜像</a>下载TexLive发行版并安装。</p>
+<h4 id="PDF阅读器"><a href="#PDF阅读器" class="headerlink" title="PDF阅读器"></a>PDF阅读器</h4><p>常见的阅读器如Adobe PDF reader, Foxit PDF reader, skim等均可。</p>
+<h4 id="选择合适的编辑器"><a href="#选择合适的编辑器" class="headerlink" title="选择合适的编辑器"></a>选择合适的编辑器</h4><p>这个就是根据个人的喜好了，如果你觉得发行版附带的编辑器不够好，你可以折腾<a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a>之类的编辑器。</p>
+<h3 id="Mac-OS"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS</h3><p>建议直接从官网下载并安装<a href="http://www.tug.org/mactex/" target="_blank" rel="noopener">MacTex</a>。安装完后，这里面附带安装的有编辑器TeXshop, 一个迷你的编辑器LaTexiT(对于偶尔想在slides中加入数学公式，这是一个非常有用的工具), TexLive utility (用于LaTex宏包的安装和更新) 以及BibDesk (一个小巧的文献管理软件，在tex文档中插入参考文献时非常方便)。</p>
+<h4 id="PDF阅读器-1"><a href="#PDF阅读器-1" class="headerlink" title="PDF阅读器"></a>PDF阅读器</h4><p>建议安装<a href="https://skim-app.sourceforge.io/" target="_blank" rel="noopener">skim</a>(一个非常轻量的pdf编辑器)</p>
+<h4 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h4><p>自带的TeXshop已经足够使用了，如果你像我一样对于”丑陋“无法容忍的话，你可以折腾优雅的<a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a>或者使用<a href="https://www.texstudio.org/" target="_blank" rel="noopener">TeXstudio</a></p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>实验室里的同学中除了我似乎没有人使用linux系统，如果有谁需要在Linux系统下安装的话可以单独问我。</p>
+<h2 id="LaTex文档的基本结构和语法"><a href="#LaTex文档的基本结构和语法" class="headerlink" title="LaTex文档的基本结构和语法"></a>LaTex文档的基本结构和语法</h2><h2 id="中文环境的配置"><a href="#中文环境的配置" class="headerlink" title="中文环境的配置"></a>中文环境的配置</h2><p>windows系统中对中文换机的支持是在导言区添加ctex宏包，如下例<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">&#123;article&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[UTF8]</span><span class="string">&#123;ctex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line">中文 English</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>Mac OS系统对中文环境的配置具体看一参考<a href="https://liam.page/2014/11/02/latex-mactex-chinese-support/" target="_blank" rel="noopener">为 MacTeX 配置中文支持</a></p>
+<h2 id="一些有用的资料"><a href="#一些有用的资料" class="headerlink" title="一些有用的资料"></a>一些有用的资料</h2><ul>
 <li>Word count. <a href="http://app.uio.no/ifi/texcount/download.html" target="_blank" rel="noopener">TexCount</a> is a project enable count of words in LaTex file. Simply downlaod and run the perl script <code>texcount -[option] file</code></li>
 <li><a href="https://mp.weixin.qq.com/s/yCfBWx37D_lVogHO2RBOfw" target="_blank" rel="noopener">排版格式</a></li>
 </ul>
@@ -487,9 +543,10 @@
 <li>Use <code>split</code> to split long equation inside<code>equation</code> environment, which only label once</li>
 <li>For <code>array</code></li>
 </ul>
-<p>##bibliograph and citation<br>The default biblatex citation stytle is <code>natbib</code>, here is the <a href="https://cn.sharelatex.com/learn/Natbib_citation_styles#!#Further_reading" target="_blank" rel="noopener">usage</a>. The simplest example is<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%Import the natbib package and sets a bibliography  and citation styles</span><br><span class="line">\usepackage&#123;natbib&#125;</span><br><span class="line">\bibliographystyle&#123;abbrvnat&#125;</span><br><span class="line">\setcitestyle&#123;authoryear,open=&#123;((&#125;,close=&#123;))&#125;&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">%Imports the bibliography file &quot;sample.bib&quot;</span><br><span class="line">\bibliography&#123;sample&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##bibliograph and citation<br>The default biblatex citation stytle is <code>natbib</code>, here is the <a href="https://cn.sharelatex.com/learn/Natbib_citation_styles#!#Further_reading" target="_blank" rel="noopener">usage</a>. The simplest example is </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Import the natbib package and sets a bibliography  and citation styles</span></span><br><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;natbib&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">bibliographystyle</span><span class="string">&#123;abbrvnat&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">setcitestyle</span><span class="string">&#123;authoryear,open=&#123;((&#125;</span></span>,close=&#123;))&#125;&#125;</span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="comment">%Imports the bibliography file "sample.bib"</span></span><br><span class="line"><span class="tag">\<span class="name">bibliography</span><span class="string">&#123;sample&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
 <p>For a full list of stytle, see <a href="http://merkel.texture.rocks/Latex/natbib.php" target="_blank" rel="noopener">here</a></p>
-<p>The ohter management system is the package <code>biblatex</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[backend = biber,style=nature]&#123;biblatex&#125;</span><br><span class="line">\addbibresource&#123;library.bib&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">...</span><br><span class="line">\printbibliography</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The ohter management system is the package <code>biblatex</code><br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[backend = biber,style=nature]</span><span class="string">&#123;biblatex&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">addbibresource</span><span class="string">&#123;library.bib&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="tag">\<span class="name">printbibliography</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Beamer"><a href="#Beamer" class="headerlink" title="Beamer"></a>Beamer</h2><h3 id="Style-and-layout"><a href="#Style-and-layout" class="headerlink" title="Style and layout"></a>Style and layout</h3><ul>
 <li><a href="https://tex.stackexchange.com/questions/188778/weird-behavior-of-math-mode-in-beamer" target="_blank" rel="noopener">suggestion of beamer presentation</a></li>
 <li><a href="https://people.eecs.berkeley.edu/~jrs/speaking.html" target="_blank" rel="noopener">genearl tips for academic presentation</a></li>
@@ -725,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#some-useful-resource"><span class="nav-number">1.</span> <span class="nav-text">some useful resource</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#manage-bib-file"><span class="nav-number">2.</span> <span class="nav-text">manage .bib file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout"><span class="nav-number">3.</span> <span class="nav-text">Layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Syntax"><span class="nav-number">4.</span> <span class="nav-text">Syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beamer"><span class="nav-number">5.</span> <span class="nav-text">Beamer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-and-layout"><span class="nav-number">5.1.</span> <span class="nav-text">Style and layout</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solve-the-math-bold-problem-in-other-latex-template"><span class="nav-number">6.</span> <span class="nav-text">Solve the math bold problem in other latex template</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTex-简介"><span class="nav-number">1.</span> <span class="nav-text">LaTex 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">1.1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装LaTex发行版"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装LaTex发行版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PDF阅读器"><span class="nav-number">1.1.2.</span> <span class="nav-text">PDF阅读器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择合适的编辑器"><span class="nav-number">1.1.3.</span> <span class="nav-text">选择合适的编辑器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-OS"><span class="nav-number">1.2.</span> <span class="nav-text">Mac OS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PDF阅读器-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">PDF阅读器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑器"><span class="nav-number">1.2.2.</span> <span class="nav-text">编辑器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux"><span class="nav-number">1.3.</span> <span class="nav-text">Linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LaTex文档的基本结构和语法"><span class="nav-number">2.</span> <span class="nav-text">LaTex文档的基本结构和语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文环境的配置"><span class="nav-number">3.</span> <span class="nav-text">中文环境的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些有用的资料"><span class="nav-number">4.</span> <span class="nav-text">一些有用的资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#manage-bib-file"><span class="nav-number">5.</span> <span class="nav-text">manage .bib file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout"><span class="nav-number">6.</span> <span class="nav-text">Layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Syntax"><span class="nav-number">7.</span> <span class="nav-text">Syntax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beamer"><span class="nav-number">8.</span> <span class="nav-text">Beamer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Style-and-layout"><span class="nav-number">8.1.</span> <span class="nav-text">Style and layout</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solve-the-math-bold-problem-in-other-latex-template"><span class="nav-number">9.</span> <span class="nav-text">Solve the math bold problem in other latex template</span></a></li></ol></div>
             
 
           </div>
@@ -766,7 +823,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.7k</span>
+    <span title="Site words total count">10k</span>
   
 </div>
 
@@ -786,7 +843,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.7k字</span>
+  <span class="post-count">博客全站共10k字</span>
 </div>
 
         
